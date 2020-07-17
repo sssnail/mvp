@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="clickEvent"
+            type="com.example.xingzhi.holographicteaching.ui.fragment.MineFragment.MineClickEvent" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.MineFragment"
+        android:layout_marginBottom="@dimen/nav_bottom_height">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorf2"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/iv_portrait"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_portrait"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="15dp"
+                    android:onClick="@{clickEvent::toLoginOnClick}"/>
+
+                <TextView
+                    android:id="@+id/tv_nickname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="用户昵称"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toRightOf="@id/iv_portrait"
+                    android:textColor="@color/color33" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="平台号：24355644"
+                    android:textSize="12sp"
+                    android:textColor="@color/color66"
+                    android:layout_below="@+id/tv_nickname"
+                    android:layout_toRightOf="@id/iv_portrait"/>
+
+                <ImageView
+                    android:id="@+id/iv_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_mine_edit"
+                    android:layout_alignParentRight="true"
+                    android:onClick="@{clickEvent::personCenterOnClick}"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/bg_mine"
+                android:gravity="center"
+                android:padding="30dp">
+
+                <LinearLayout
+                    android:id="@+id/ll_balance"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginBottom="15dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="平台币余额："
+                        android:textSize="14sp"
+                        android:textColor="@color/colorWhite"
+                        android:layout_centerHorizontal="true"
+                        android:layout_toLeftOf="@id/tv_balance"
+                        android:layout_marginTop="3dp"/>
+                    <TextView
+                        android:id="@+id/tv_balance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mine_balance"
+                        android:textSize="26sp"
+                        android:textColor="@color/colorWhite"/>
+
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_charge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="充值"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorWhite"
+                    android:background="@drawable/bg_pay_record"
+                    android:gravity="center"
+                    android:layout_below="@id/ll_balance"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="记录"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorWhite"
+                    android:background="@drawable/bg_pay_record"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/ll_balance"
+                    android:gravity="center"/>
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/radius_white_bg"
+                android:layout_marginTop="15dp"
+                android:padding="15dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="个人中心"
+                    android:textSize="16sp"
+                    android:textColor="@color/color33" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="游戏中心"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:onClick="@{clickEvent::gameCenterOnClick}"
+                        android:drawableTop="@drawable/ic_mine_game"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="消息中心"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:onClick="@{clickEvent::msgCenterOnClick}"
+                        android:drawableTop="@drawable/ic_mine_msg" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="投诉反馈"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:drawableTop="@drawable/ic_mine_feedback" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="检查更新"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:drawableTop="@drawable/ic_mine_update" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/radius_white_bg"
+                android:layout_marginTop="15dp"
+                android:padding="15dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="用户须知"
+                    android:textSize="16sp"
+                    android:textColor="@color/color33" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="用户规范"
+                        android:textSize="12sp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:drawableTop="@drawable/ic_mine_rules" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="隐私协议"
+                        android:textSize="12sp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:drawableTop="@drawable/ic_mine_privacy" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="用户协议"
+                        android:textSize="12sp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:drawableTop="@drawable/ic_mine_user" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="关于我们"
+                        android:textSize="12sp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:drawableTop="@drawable/ic_mine_about" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="关于账号"
+                        android:textSize="12sp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:drawableTop="@drawable/ic_mine_account" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="炬风价值观"
+                        android:textSize="12sp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:drawableTop="@drawable/ic_mine_value" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="关于账号"
+                        android:textSize="12sp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:visibility="invisible"
+                        android:drawableTop="@drawable/ic_mine_game" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="炬风价值观"
+                        android:textSize="12sp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:visibility="invisible"
+                        android:drawableTop="@drawable/ic_mine_msg" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

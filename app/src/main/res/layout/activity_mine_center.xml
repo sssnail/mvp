@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="clickEvent"
+            type="com.example.xingzhi.holographicteaching.ui.activity.MineCenterActivity.MineCenterClickEvent" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="15dp"
+        tools:context=".ui.activity.MineCenterActivity">
+
+        <include
+            android:id="@+id/title_layout"
+            layout="@layout/title_bar" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="15dp"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/radius_white_bg"
+            android:layout_margin="1dp"
+            android:padding="15dp"
+            app:layout_constraintTop_toBottomOf="@id/title_layout"
+            android:elevation="1dp"
+            >
+            <TextView
+                android:id="@+id/baseinfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="基础信息"
+                android:textSize="18sp"
+                android:textColor="@color/colorBlue"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_portrait"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="头像"
+                android:textSize="14sp"
+                android:textColor="@color/color33"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/baseinfo"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_mine_account"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/baseinfo" />
+
+            <View
+                android:id="@+id/view"
+                style="@style/DivideView"
+                app:layout_constraintTop_toBottomOf="@id/tv_portrait"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="昵称"
+                android:textSize="14sp"
+                android:textColor="@color/color33"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/view"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="不可思议"
+                android:textSize="14sp"
+                android:textColor="@color/color33"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/view"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/radius_white_bg"
+            android:layout_margin="1dp"
+            android:padding="15dp"
+            android:elevation="1dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="安全信息"
+                android:textSize="18sp"
+                android:textColor="@color/colorBlue"
+                android:layout_marginBottom="8dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="平台账号"
+                    android:textColor="@color/color33"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="游戏中心"
+                    android:textColor="@color/color33"
+                    android:textSize="14sp"
+                    android:layout_alignParentRight="true"/>
+            </RelativeLayout>
+            <View
+                style="@style/DivideView" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:onClick="@{clickEvent::toBindPhoneOnClick}">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="绑定手机"
+                    android:textColor="@color/color33"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="189*****468"
+                    android:textColor="@color/color33"
+                    android:textSize="14sp"
+                    android:layout_alignParentRight="true"
+                    android:drawableRight="@drawable/ic_arrow_right"
+                    android:drawablePadding="10dp"/>
+            </RelativeLayout>
+
+
+            <View style="@style/DivideView" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="实名认证"
+                    android:textColor="@color/color33"
+                    android:textSize="14sp"/>
+
+                <ImageView
+                    android:id="@+id/iv_realname_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_right"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"/>
+
+                <ImageView
+                    android:id="@+id/iv_authenticate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/authenticated"
+                    android:layout_toLeftOf="@id/iv_realname_back"
+                    android:layout_marginRight="10dp"
+
+                    />
+            </RelativeLayout>
+
+
+            <View
+                style="@style/DivideView" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:onClick="@{clickEvent::toModifyPwdOnClick}">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="修改密码"
+                    android:textColor="@color/color33"
+                    android:textSize="14sp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_right"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"/>
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="退出登录"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:background="@drawable/bg_radius_blue"
+            android:layout_marginTop="50dp"
+            />
+
+
+
+    </LinearLayout>
+</layout>

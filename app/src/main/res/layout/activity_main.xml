@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="bean"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+
+    <!--    <include-->
+    <!--        android:id="@+id/toolbarLayout"-->
+    <!--        layout="@layout/toolbar"-->
+    <!--        android:visibility="gone" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/text"-->
+    <!--        android:layout_below="@id/toolbarLayout"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Hello World!"-->
+    <!--        android:visibility="gone"-->
+    <!--        android:onClick="onClick"-->
+    <!--         />-->
+
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/llinearLayout"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="100dp"-->
+    <!--        android:background="@color/cardview_dark_background"-->
+    <!--        android:layout_below="@id/text"-->
+    <!--        android:orientation="vertical"-->
+    <!--        android:visibility="gone">-->
+
+    <!--        <Button-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:text="Click Me plz"-->
+    <!--            android:background="@color/colorAccent" />-->
+    <!--    </LinearLayout>-->
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/nav_bottom_height"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="#ffffff"
+        app:itemIconTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemTextColor="@drawable/bottom_text_color"/>
+
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+
+        app:layout_constraintBottom_toTopOf="@id/nav_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/mobile_navigation" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
