@@ -11,7 +11,7 @@ import com.example.xingzhi.holographicteaching.R;
 import com.example.xingzhi.holographicteaching.adpter.MsgCenterAdapter;
 import com.example.xingzhi.holographicteaching.databinding.ActivityMsgBinding;
 import com.example.xingzhi.holographicteaching.listener.ItemListener;
-import com.example.xingzhi.holographicteaching.modle.MsgListBean;
+import com.example.xingzhi.holographicteaching.bean.MsgListBean;
 
 public class MsgActivity extends AppCompatActivity {
     private ActivityMsgBinding binding;

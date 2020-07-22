@@ -2,7 +2,7 @@ package com.example.xingzhi.holographicteaching.presenter;
 
 
 import com.example.xingzhi.holographicteaching.base.BasePresenter;
-import com.example.xingzhi.holographicteaching.modle.MainModel;
+import com.example.xingzhi.holographicteaching.bean.MainModel;
 import com.example.xingzhi.holographicteaching.net.ApiCallback;
 import com.example.xingzhi.holographicteaching.view.MainView;
 

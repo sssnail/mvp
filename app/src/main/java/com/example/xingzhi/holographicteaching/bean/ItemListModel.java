@@ -1,13 +1,9 @@
-package com.example.xingzhi.holographicteaching.modle;
+package com.example.xingzhi.holographicteaching.bean;
 
 import androidx.lifecycle.ViewModel;
 
 import java.util.List;
 
-/**
- * Explain
- * Created by jc on 2020/7/14 10:56.
- */
 public class ItemListModel extends ViewModel {
 
     public final List<ItemListBean> itemListBeans;

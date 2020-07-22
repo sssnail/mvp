@@ -1,4 +1,4 @@
-package com.example.xingzhi.holographicteaching.modle;
+package com.example.xingzhi.holographicteaching.bean;
 
 /**
  * @explain  示例 天气模型

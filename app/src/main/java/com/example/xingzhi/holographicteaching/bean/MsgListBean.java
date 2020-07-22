@@ -1,4 +1,4 @@
-package com.example.xingzhi.holographicteaching.modle;
+package com.example.xingzhi.holographicteaching.bean;
 
 import androidx.lifecycle.ViewModel;
 

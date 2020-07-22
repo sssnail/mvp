@@ -1,6 +1,6 @@
 package com.example.xingzhi.holographicteaching.net;
 
-import com.example.xingzhi.holographicteaching.modle.MainModel;
+import com.example.xingzhi.holographicteaching.bean.MainModel;
 
 import io.reactivex.Observable;
 import retrofit2.Call;

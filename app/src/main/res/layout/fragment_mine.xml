@@ -12,12 +12,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.fragment.MineFragment"
+        android:background="@color/colorf2"
         android:layout_marginBottom="@dimen/nav_bottom_height">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorf2"
             android:clickable="true"
             android:focusable="true"
             android:orientation="vertical"
@@ -33,7 +33,7 @@
                     android:id="@+id/iv_portrait"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_portrait"
+                    android:src="@mipmap/game"
                     android:layout_gravity="center"
                     android:layout_marginRight="15dp"
                     android:onClick="@{clickEvent::toLoginOnClick}"/>

@@ -19,7 +19,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
         tools:replace="android:appComponentFactory">
-        <activity android:name=".ui.activity.SearchActivity"></activity>
+        <activity android:name=".ui.activity.GameDetailActivity"></activity>
+        <activity android:name=".ui.activity.SearchActivity" />
         <activity android:name=".ui.activity.SmsLoginActivity" />
         <activity android:name=".ui.activity.ForgetPwdActivity" />
         <activity android:name=".ui.activity.RegistActivity" />

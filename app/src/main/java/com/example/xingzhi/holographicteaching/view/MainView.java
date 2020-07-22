@@ -1,6 +1,6 @@
 package com.example.xingzhi.holographicteaching.view;
 
-import com.example.xingzhi.holographicteaching.modle.MainModel;
+import com.example.xingzhi.holographicteaching.bean.MainModel;
 
 /**
  * @explain 视图层示例

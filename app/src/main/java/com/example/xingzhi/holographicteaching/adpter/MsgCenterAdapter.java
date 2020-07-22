@@ -6,7 +6,7 @@ import android.view.View;
 import com.example.xingzhi.holographicteaching.R;
 import com.example.xingzhi.holographicteaching.databinding.ItemMsgBinding;
 import com.example.xingzhi.holographicteaching.listener.ItemListener;
-import com.example.xingzhi.holographicteaching.modle.MsgListBean;
+import com.example.xingzhi.holographicteaching.bean.MsgListBean;
 
 
 public class MsgCenterAdapter extends BaseBindingAdapter<MsgListBean.ItemListBean, ItemMsgBinding> {

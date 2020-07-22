@@ -20,7 +20,7 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.xingzhi.holographicteaching.R;
 import com.example.xingzhi.holographicteaching.databinding.FragmentHomeBinding;
 import com.example.xingzhi.holographicteaching.base.MvpFragment;
-import com.example.xingzhi.holographicteaching.modle.MainModel;
+import com.example.xingzhi.holographicteaching.bean.MainModel;
 import com.example.xingzhi.holographicteaching.presenter.MainPresenter;
 import com.example.xingzhi.holographicteaching.ui.activity.SearchActivity;
 import com.example.xingzhi.holographicteaching.view.MainView;
@@ -128,11 +128,11 @@ public class HomeFragment extends MvpFragment<MainPresenter> implements MainView
 
     private void initFragments() {
         for (int i = 0; i < CHANNELS.length; i++) {
-            TestFragment testFragment = new TestFragment();
+            GameFragment gameFragment = new GameFragment();
             Bundle bundle = new Bundle();
-            bundle.putString(TestFragment.EXTRA_TEXT, CHANNELS[i]);
-            testFragment.setArguments(bundle);
-            mFragments.add(testFragment);
+            bundle.putString(GameFragment.EXTRA_TEXT, CHANNELS[i]);
+            gameFragment.setArguments(bundle);
+            mFragments.add(gameFragment);
         }
     }
 

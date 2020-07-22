@@ -3,7 +3,7 @@
     <data>
         <variable
             name="bean"
-            type="com.example.xingzhi.holographicteaching.modle.ItemListModel.ItemListBean" />
+            type="com.example.xingzhi.holographicteaching.bean.ItemListModel.ItemListBean" />
 
     </data>
     <RelativeLayout
@@ -23,13 +23,14 @@
                 android:id="@+id/iv_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_mine_privacy"
+                android:src="@mipmap/game"
                 android:layout_alignParentLeft="true"
                 />
             <RelativeLayout
                 android:layout_toRightOf="@id/iv_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:orientation="horizontal">
                 <TextView
                     android:id="@+id/item_number"
@@ -75,7 +76,7 @@
                     android:hint="传奇"
                     android:textColor="@color/colorWhite"
                     android:textSize="11sp"
-                    android:background="@drawable/blue_bg" />
+                    android:background="@drawable/bg_blue_item" />
             </RelativeLayout>
 
             <TextView
@@ -102,38 +103,7 @@
                 android:background="@drawable/install_bg"/>
 
         </RelativeLayout>
-
-
-        <LinearLayout
-            android:id="@+id/ll_item_foot"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center"
-            android:layout_marginTop="15dp"
-            android:visibility="gone"
-            android:layout_below="@id/relative"
-            android:gravity="center">
-            <View
-                android:layout_width="0dp"
-                android:layout_height="0.5dp"
-                android:background="#CCCCCC"
-                android:layout_weight="1"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="  我也是有底线的~  "
-                android:textColor="@color/color99"
-                android:textSize="14sp"
-                android:gravity="center"/>
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="0.5dp"
-                android:background="#CCCCCC"
-                android:layout_weight="1"/>
-        </LinearLayout>
+        <include android:id="@+id/llItemFoot" layout="@layout/footview" android:visibility="gone"/>
 
     </RelativeLayout>
 </layout>
