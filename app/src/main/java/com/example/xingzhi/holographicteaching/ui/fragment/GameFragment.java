@@ -11,12 +11,14 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
 import com.example.xingzhi.holographicteaching.R;
 import com.example.xingzhi.holographicteaching.adpter.OpenRecordAdapter;
 import com.example.xingzhi.holographicteaching.bean.OpenRecordModel;
 import com.example.xingzhi.holographicteaching.databinding.FraGameBinding;
 import com.example.xingzhi.holographicteaching.listener.ItemListener;
 import com.example.xingzhi.holographicteaching.ui.activity.GameDetailActivity;
+import com.example.xingzhi.holographicteaching.utils.Utils;
 
 
 public class GameFragment extends Fragment {
@@ -38,6 +40,7 @@ public class GameFragment extends Fragment {
         if (bundle != null) {
             textView.setText(bundle.getString(EXTRA_TEXT));
         }
+        Glide.with(getActivity()).load(Utils.getImageUrl()).into(binding.ivTop);
         adapter = new OpenRecordAdapter();
         binding.openRecordRv.setAdapter(adapter);
         adapter.setDate(new OpenRecordModel().getData());
@@ -47,12 +50,6 @@ public class GameFragment extends Fragment {
                 startActivity(new Intent(getActivity(), GameDetailActivity.class));
             }
         });
-//        binding.openRecordRv.setLayoutManager(new LinearLayoutManager(getActivity()){
-//            @Override
-//            public boolean canScrollVertically() {
-//                return false;
-//            }
-//        });
 
     }
 }

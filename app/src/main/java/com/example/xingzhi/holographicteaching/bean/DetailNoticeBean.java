@@ -7,9 +7,11 @@ import java.util.List;
 public class DetailNoticeBean extends ViewModel {
 
     public final List<AcNoticeBean> itemListBeans;
+    public final List<DetailCardBean> itemCardListBeans;
 
-    public DetailNoticeBean(List<AcNoticeBean> acNoticeBeans) {
+    public DetailNoticeBean(List<AcNoticeBean> acNoticeBeans, List<DetailCardBean> itemCardListBeans) {
         this.itemListBeans = acNoticeBeans;
+        this.itemCardListBeans = itemCardListBeans;
     }
 
     public List<AcNoticeBean> getItemListBeans() {
@@ -49,6 +51,22 @@ public class DetailNoticeBean extends ViewModel {
 
         public void setTimeValid(String timeValid) {
             this.timeValid = timeValid;
+        }
+    }
+
+    public static class DetailCardBean{
+        private String imageUrl;
+
+        public DetailCardBean(String imageUrl){
+            this.imageUrl = imageUrl;
+        }
+
+        public String getImageUrl() {
+            return imageUrl;
+        }
+
+        public void setImageUrl(String imageUrl) {
+            this.imageUrl = imageUrl;
         }
     }
 

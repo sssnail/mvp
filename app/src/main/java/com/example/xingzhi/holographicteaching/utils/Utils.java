@@ -130,6 +130,10 @@ public class Utils {
         }
     }
 
+    public static String getImageUrl(){
+        return "https://oimageb4.ydstatic.com/image?id=-2318081738758928284&product=adpublish&w=520&h=347";
+    }
+
 
 
 

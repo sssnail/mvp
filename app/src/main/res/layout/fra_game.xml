@@ -25,9 +25,9 @@
                 android:layout_gravity="center"
                 android:visibility="gone"/>
             <ImageView
+                android:id="@+id/iv_top"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@mipmap/game_top" />
+                android:layout_height="wrap_content" />
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
