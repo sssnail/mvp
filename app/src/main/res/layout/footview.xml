@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/relative"
         android:layout_gravity="center"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="@dimen/margin16"
         android:gravity="center"
         android:orientation="horizontal"
         android:visibility="visible">

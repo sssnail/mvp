@@ -1,5 +1,6 @@
 package com.example.xingzhi.holographicteaching.adpter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.xingzhi.holographicteaching.R;
 import com.example.xingzhi.holographicteaching.bean.ItemListModel;
 import com.example.xingzhi.holographicteaching.listener.ItemListener;
+import com.example.xingzhi.holographicteaching.utils.Utils;
 
 import java.util.List;
 
@@ -21,6 +23,11 @@ public class OpenRecordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     private int ITEM_CONTENT = 2;
     private List<Object> objects;
     private ItemListener itemListener;
+    private Context context;
+
+    public OpenRecordAdapter(Context context) {
+        this.context = context;
+    }
 
     /**
      * 传入数据
@@ -61,6 +68,9 @@ public class OpenRecordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
             ((ViewHolderContent) holder).itemNumber.setText(bean.getTitle());
             ((ViewHolderContent) holder).itemContent.setText(String.valueOf(bean.getContent()));
+            ((ViewHolderContent) holder).itemDiscount.setText(String.valueOf(bean.getDiscount()));
+            ((ViewHolderContent) holder).itemInstall.setText(bean.getType()==0?"安装":"打开");
+            Utils.createTvLabels(context, ((ViewHolderContent) holder).llLabels, bean.getLabels());
 
             if (itemListener != null){
                 ((ViewHolderContent) holder).relativeLayout.setOnClickListener(new View.OnClickListener() {

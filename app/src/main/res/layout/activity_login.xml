@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="15dp">
+        android:padding="@dimen/margin16">
 
         <include android:id="@+id/title_layout" layout="@layout/title_bar" />
         <ImageView
@@ -25,7 +25,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="15dp"
+            android:padding="@dimen/margin16"
             android:orientation="vertical">
 
             <RelativeLayout
@@ -109,7 +109,7 @@
                     android:layout_height="wrap_content"
                     android:text="短信登录"
                     android:textColor="@color/color33"
-                    android:layout_margin="15dp"
+                    android:layout_margin="@dimen/margin16"
                     android:padding="3dp"
                     android:onClick="@{clickEvent::toSmsLoginOnClick}"/>
                 <TextView

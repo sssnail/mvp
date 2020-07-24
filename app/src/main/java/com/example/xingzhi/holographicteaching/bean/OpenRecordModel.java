@@ -3,6 +3,8 @@ package com.example.xingzhi.holographicteaching.bean;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.xingzhi.holographicteaching.utils.Utils.getLabels;
+
 public class OpenRecordModel {
     public OpenRecordModel() {
 
@@ -49,7 +51,7 @@ public class OpenRecordModel {
     private List<ItemListModel.ItemListBean> getLogLists(int size) {
         List<ItemListModel.ItemListBean> logs = new ArrayList<>();
         for (int i = 0; i < size; i++) {
-            ItemListModel.ItemListBean logDOListBean = new ItemListModel.ItemListBean( "烈焰主宰", "4.5折", "全方位体验一个不一样的...", "传奇", "传奇9服", 0);
+            ItemListModel.ItemListBean logDOListBean = new ItemListModel.ItemListBean( "烈焰主宰", "4.5折", "全方位体验一个不一样的...", "传奇", "传奇9服", 0, getLabels());
             logs.add(logDOListBean);
         }
         return logs;

@@ -18,6 +18,7 @@ import com.example.xingzhi.holographicteaching.databinding.FraSearchResultBindin
 import com.example.xingzhi.holographicteaching.listener.ItemListener;
 import com.example.xingzhi.holographicteaching.bean.ItemListModel;
 import com.example.xingzhi.holographicteaching.ui.activity.GameDetailActivity;
+import com.example.xingzhi.holographicteaching.utils.Utils;
 
 /**
  * A fragment representing a list of Items.
@@ -53,7 +54,7 @@ public class SearchResultFragment extends Fragment {
 //            binding.textView.setText(bundle.getString(EXTRA_TEXT));
         }
         for (int i = 0; i < 3; i++) {
-            gameCenterAdapter.getItems().add(new ItemListModel.ItemListBean( "搜索", "4.5折", "全方位体验一个不一样的...", "传奇", "传奇9服", 0));
+            gameCenterAdapter.getItems().add(new ItemListModel.ItemListBean( "搜索", "4.5折", "全方位体验一个不一样的...", "传奇", "传奇9服", 0, Utils.getLabels()));
         }
         gameCenterAdapter.setOnItemClickListener(new ItemListener() {
             @Override

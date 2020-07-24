@@ -23,14 +23,16 @@ public class ItemListModel extends ViewModel {
         private String intro;
         private String footprint;
         private int type;
+        private List<String> labels;
 
-        public ItemListBean(String title, String discount, String content, String intro, String footprint, int type) {
+        public ItemListBean(String title, String discount, String content, String intro, String footprint, int type, List<String> labels) {
             this.title = title;
             this.discount = discount;
             this.content = content;
             this.intro = intro;
             this.footprint = footprint;
             this.type = type;
+            this.labels = labels;
         }
 
         public String getTitle() {
@@ -79,6 +81,14 @@ public class ItemListModel extends ViewModel {
 
         public void setType(int type) {
             this.type = type;
+        }
+
+        public List<String> getLabels() {
+            return labels;
+        }
+
+        public void setLabels(List<String> labels) {
+            this.labels = labels;
         }
     }
 

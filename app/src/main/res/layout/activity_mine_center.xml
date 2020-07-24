@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="15dp"
+        android:padding="@dimen/margin16"
         tools:context=".ui.activity.MineCenterActivity">
 
         <include
@@ -20,18 +20,15 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="15dp"/>
+            android:layout_height="@dimen/margin16"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/radius_white_bg"
-            android:layout_margin="1dp"
-            android:padding="15dp"
-            app:layout_constraintTop_toBottomOf="@id/title_layout"
-            android:elevation="1dp"
-            >
+            android:background="@drawable/shadow"
+            android:padding="@dimen/margin16"
+            app:layout_constraintTop_toBottomOf="@id/title_layout">
             <TextView
                 android:id="@+id/baseinfo"
                 android:layout_width="wrap_content"
@@ -91,16 +88,14 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="15dp" />
+            android:layout_height="@dimen/margin16" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/radius_white_bg"
-            android:layout_margin="1dp"
-            android:padding="15dp"
-            android:elevation="1dp"
+            android:background="@drawable/shadow"
+            android:padding="@dimen/margin16"
             >
             <TextView
                 android:layout_width="wrap_content"
@@ -108,12 +103,12 @@
                 android:text="安全信息"
                 android:textSize="18sp"
                 android:textColor="@color/colorBlue"
-                android:layout_marginBottom="8dp"/>
+                android:layout_marginBottom="@dimen/margin8"/>
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp">
+                android:paddingTop="@dimen/margin8"
+                android:paddingBottom="@dimen/margin8">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -134,8 +129,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
+                android:paddingTop="@dimen/margin8"
+                android:paddingBottom="@dimen/margin8"
                 android:onClick="@{clickEvent::toBindPhoneOnClick}">
                 <TextView
                     android:layout_width="wrap_content"
@@ -160,8 +155,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp">
+                android:paddingTop="@dimen/margin8"
+                android:paddingBottom="@dimen/margin8">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -195,8 +190,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
+                android:paddingTop="@dimen/margin8"
+                android:paddingBottom="@dimen/margin8"
                 android:onClick="@{clickEvent::toModifyPwdOnClick}">
                 <TextView
                     android:layout_width="wrap_content"

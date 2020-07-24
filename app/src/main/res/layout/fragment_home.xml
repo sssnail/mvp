@@ -40,10 +40,10 @@
             android:id="@+id/ll_search"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="@dimen/margin16"
             android:background="@drawable/radius_grey_bg"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp">
+            android:layout_marginLeft="@dimen/margin16"
+            android:layout_marginRight="@dimen/margin16">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -60,7 +60,7 @@
                 android:background="@null"
                 android:textColor="@color/color33"
                 android:gravity="center_vertical"
-                android:layout_marginLeft="15dp"/>
+                android:layout_marginLeft="@dimen/margin16"/>
 
         </LinearLayout>
         <ScrollView
@@ -90,6 +90,7 @@
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="9" />
+            android:layout_weight="9"
+            android:layout_marginBottom="@dimen/nav_bottom_height"/>
     </LinearLayout>
 </layout>

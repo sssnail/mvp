@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin16">
+
+        <RelativeLayout
+            android:id="@+id/relative"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shadow"
+            android:padding="@dimen/margin16">
+
+            <TextView
+                android:id="@+id/item_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignWithParentIfMissing="true"
+                android:text="订单号:12763459"
+                android:textColor="@color/color99"
+                android:textSize="10sp"
+                android:layout_marginBottom="5dp"/>
+            <TextView
+                android:id="@+id/item_amout"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:layout_alignWithParentIfMissing="true"
+                android:layout_alignParentRight="true"
+                android:text="¥5683.66"
+                android:textColor="@color/colortvOrange"
+                android:textSize="16sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:layout_alignWithParentIfMissing="true"
+                android:layout_toLeftOf="@id/item_amout"
+                android:text="获得奖励:"
+                android:textColor="@color/color99"
+                android:textSize="10sp"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/item_order_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignWithParentIfMissing="true"
+                android:layout_below="@+id/item_order"
+                android:text="订单完成时间:2020-06-27 15:26"
+                android:textColor="@color/color99"
+                android:textSize="10sp"
+                android:layout_marginBottom="5dp"/>
+
+            <ImageView
+                android:id="@+id/iv_point"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/item_order_date"
+                android:layout_marginRight="@dimen/margin16"
+                android:background="@mipmap/portrait" />
+
+            <TextView
+                android:id="@+id/item_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignWithParentIfMissing="true"
+                android:layout_toRightOf="@+id/iv_point"
+                android:layout_below="@+id/item_order_date"
+                android:text="土豆游戏白金会员"
+                android:textColor="@color/color66"
+                android:textSize="16sp"
+                android:layout_marginBottom="5dp"/>
+            <TextView
+                android:id="@+id/item_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignWithParentIfMissing="true"
+                android:layout_toRightOf="@+id/iv_point"
+                android:layout_below="@id/item_title"
+                android:text="商品金额:¥2980"
+                android:textColor="@color/color99"
+                android:textSize="14sp"
+                android:layout_marginBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/item_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/item_title"
+                android:text="实付金额:¥2332"
+                android:textColor="@color/color99"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/item_number"
+                android:layout_toRightOf="@+id/iv_point"
+                android:text="用户名:175***5868"
+                android:textColor="@color/color99"
+                android:textSize="14sp"
+                android:layout_marginBottom="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item_number"
+                android:layout_toLeftOf="@+id/item_status"
+                android:text="状态:"
+                android:textColor="@color/color33"
+                android:textSize="16sp" />
+            <TextView
+                android:id="@+id/item_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item_number"
+                android:layout_alignParentRight="true"
+                android:text="已付款"
+                android:textColor="@color/colortvOrange"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <include
+            android:id="@+id/item_footview"
+            layout="@layout/footview"
+            android:visibility="gone" />
+
+
+    </RelativeLayout>
+</layout>
+

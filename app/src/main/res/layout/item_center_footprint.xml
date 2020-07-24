@@ -9,16 +9,14 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp">
+        android:layout_marginTop="@dimen/margin16">
 
         <RelativeLayout
             android:id="@+id/relative"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/radius_white_bg"
-            android:padding="15dp"
-            android:elevation="1dp"
-            android:layout_margin="1dp">
+            android:background="@drawable/shadow"
+            android:padding="@dimen/margin16">
             <ImageView
                 android:id="@+id/iv_icon"
                 android:layout_width="wrap_content"
@@ -48,7 +46,6 @@
                     android:layout_toRightOf="@id/item_number"
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/orange_bg"
-                    android:hint="4.5折"
                     android:text="@{bean.discount}"
                     android:textColor="@color/colorWhite"
                     android:textSize="12sp"/>
@@ -67,16 +64,23 @@
                     android:layout_marginTop="2dp"
                     android:layout_marginBottom="2dp"/>
 
+                <LinearLayout
+                    android:id="@+id/ll_labels"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/item_content"
+                    />
                 <TextView
                     android:id="@+id/content"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/item_content"
-                    android:text="@{bean.intro}"
-                    android:hint="传奇"
+                    android:text="传奇"
                     android:textColor="@color/colorWhite"
                     android:textSize="11sp"
-                    android:background="@drawable/bg_blue_item" />
+                    android:background="@drawable/bg_blue_item"
+                    android:visibility="gone"/>
             </RelativeLayout>
 
             <TextView
@@ -84,7 +88,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/iv_icon"
-                android:hint="我的足迹"
                 android:text="@{@string/mine_footprint(bean.footprint)}"
                 android:textColor="@color/color99"
                 android:textSize="10sp"
@@ -96,7 +99,6 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
-                android:hint="安装"
                 android:text='@{bean.type == 0 ? "安装":"打开"}'
                 android:textColor="@color/colorBlue"
                 android:textSize="16sp"

@@ -6,11 +6,6 @@ import com.wuxiaolong.androidutils.library.LogUtil;
 import io.reactivex.observers.DisposableObserver;
 import retrofit2.HttpException;
 
-/**
- * @explain
- * @author JC.
- * @creat time 2019/10/30 15:18.
- */
 public abstract class ApiCallback<M> extends DisposableObserver<M> {
 
     public abstract void onSuccess(M model);

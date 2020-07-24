@@ -4,11 +4,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * @explain
- * @author JC.
- * @creat time 2019/10/30 15:21.
- */
 
 public abstract class RetrofitCallback<M> implements Callback<M> {
 

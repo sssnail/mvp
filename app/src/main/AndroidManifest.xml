@@ -20,7 +20,16 @@
         android:theme="@style/AppTheme.NoActionBar"
         android:usesCleartextTraffic="true"
         tools:replace="android:appComponentFactory">
-        <activity android:name=".ui.activity.GameDetailActivity"></activity>
+        <activity android:name=".ui.activity.PartnerOrderActivity"></activity>
+        <activity android:name=".ui.activity.PartnerActivity" />
+        <activity android:name=".ui.activity.AccountBillActivity" />
+        <activity android:name=".ui.activity.WdHistoryActivity" />
+        <activity android:name=".ui.activity.WithdrawActivity" />
+        <activity android:name=".ui.activity.WithdrawBindActivity" />
+        <activity android:name=".ui.activity.WidrawExplainActivity" />
+        <activity android:name=".ui.activity.ActivateCodeActivity" />
+        <activity android:name=".ui.activity.ActivateVipActivity" />
+        <activity android:name=".ui.activity.GameDetailActivity" />
         <activity android:name=".ui.activity.SearchActivity" />
         <activity android:name=".ui.activity.SmsLoginActivity" />
         <activity android:name=".ui.activity.ForgetPwdActivity" />

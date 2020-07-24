@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin16">
+
+        <RelativeLayout
+            android:id="@+id/relative"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shadow"
+            android:padding="@dimen/margin16">
+
+            <ImageView
+                android:id="@+id/iv_point"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="3dp"
+                android:background="@drawable/ic_msg_point"
+                android:hint="系统消息" />
+
+            <TextView
+                android:id="@+id/item_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignWithParentIfMissing="true"
+                android:layout_toRightOf="@+id/iv_point"
+                android:text="2020-06-27 15:16:37"
+                android:textColor="@color/color99"
+                android:textSize="14sp"
+                android:layout_marginBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/item_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="提现金额: ¥699.66 "
+                android:textColor="@color/color33"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/item_number"
+                android:text="提现方式："
+                android:textColor="@color/color99"
+                android:textSize="14sp"
+                android:layout_marginBottom="5dp"/>
+            <TextView
+                android:id="@+id/tv_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/item_number"
+                android:layout_toRightOf="@+id/style"
+                android:text="银行卡"
+                android:textColor="@color/color33"
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/item_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item_number"
+                android:layout_alignParentRight="true"
+                android:text="提现状态：待打款"
+                android:textColor="@color/color33"
+                android:textSize="16sp" />
+            <TextView
+                android:id="@+id/tv_remark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/style"
+                android:text="备注：无"
+                android:textColor="@color/color99"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+        <include
+            android:id="@+id/item_footview"
+            layout="@layout/footview"
+            android:visibility="gone" />
+
+
+    </RelativeLayout>
+</layout>
+

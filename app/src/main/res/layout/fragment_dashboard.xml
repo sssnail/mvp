@@ -1,34 +1,361 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#ffffff"
-    tools:context=".ui.fragment.DashboardFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/text_dashboard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
+        <variable
+            name="clickEvent"
+            type="com.example.xingzhi.holographicteaching.ui.fragment.DashboardFragment.VipClickEvent" />
+    </data>
 
-    <TextView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:text="ddddddd"
-        app:layout_constraintBottom_toBottomOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:layout_marginBottom="@dimen/nav_bottom_height"
+        android:background="#ffffff">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".ui.fragment.DashboardFragment">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@mipmap/vip_top"
+                android:onClick="@{clickEvent.toWithdrawClick}"
+                android:paddingLeft="@dimen/margin16"
+                android:paddingTop="30dp"
+                android:paddingRight="@dimen/margin16"
+                android:paddingBottom="10dp">
+
+                <ImageView
+                    android:id="@+id/iv_portrait"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin16"
+                    android:src="@mipmap/portrait" />
+
+                <TextView
+                    android:id="@+id/tv_nickname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/iv_portrait"
+                    android:text="用户昵称"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/tv_nickname"
+                    android:src="@mipmap/vip_label" />
+
+                <TextView
+                    android:id="@+id/tv_invite_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_nickname"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toRightOf="@id/iv_portrait"
+                    android:text="邀请码:TI4K8I"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_withdraw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_invite_code"
+                    android:layout_toRightOf="@id/iv_portrait"
+                    android:background="@drawable/bg_vip_rect"
+                    android:gravity="center"
+                    android:text="累计提现:"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="60dp"
+                    android:drawableLeft="@drawable/ic_withdraw"
+                    android:drawablePadding="6dp"
+                    android:gravity="center"
+                    android:text="收益提现"
+                    android:textColor="@color/colorWithdraw"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginRight="60dp"
+                    android:background="@drawable/bg_withdraw"
+                    android:gravity="center"
+                    android:text="提现"
+                    android:textColor="@color/colortvWithdraw"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/margin16">
+
+                <RelativeLayout
+                    android:id="@+id/rl_partner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shadow"
+                    android:onClick="@{clickEvent.toPartnerClick}"
+                    android:padding="@dimen/margin16">
+
+                    <TextView
+                        android:id="@+id/title_partner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_vip_partner"
+                        android:drawablePadding="@dimen/margin8"
+                        android:gravity="center"
+                        android:text="我的伙伴"
+                        android:textColor="@color/color33"
+                        android:textSize="16sp"
+                        android:layout_marginBottom="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:drawableRight="@drawable/ic_arrow_right"
+                        android:drawablePadding="6dp"
+                        android:gravity="center"
+                        android:text="更多"
+                        android:textColor="@color/color99"
+                        android:textSize="12sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_below="@+id/title_partner">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_weight="1">
+                            <TextView
+                                android:id="@+id/tv_partner"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="5445"
+                                android:textSize="16sp"
+                                android:textColor="@color/color33" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="我的伙伴"
+                                android:textSize="12sp"
+                                android:textColor="@color/color33"
+                                android:layout_below="@id/tv_partner"
+                                android:layout_marginTop="10dp"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/tv_vip"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="5445"
+                                android:textSize="16sp"
+                                android:textColor="@color/color33"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="我的会员"
+                                android:textSize="12sp"
+                                android:textColor="@color/color33"
+                                android:layout_below="@id/tv_vip"
+                                android:layout_marginTop="10dp"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/tv_increase_pa"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="5445"
+                                android:textSize="16sp"
+                                android:textColor="@color/color33"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="今日新增伙伴"
+                                android:textSize="12sp"
+                                android:textColor="@color/color33"
+                                android:layout_below="@id/tv_increase_pa"
+                                android:layout_marginTop="10dp"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/tv_increase_vip"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="5445"
+                                android:textSize="16sp"
+                                android:textColor="@color/color33"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="今日新增会员"
+                                android:textSize="12sp"
+                                android:textColor="@color/color33"
+                                android:layout_below="@id/tv_increase_vip"
+                                android:layout_marginTop="10dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </RelativeLayout>
+                <ImageView
+                    android:id="@+id/iv_activate_vip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/activate_vip"
+                    android:onClick="@{clickEvent.toActivateClick}"
+                    android:layout_marginTop="@dimen/margin16"
+                    android:layout_marginBottom="16dp"/>
+                <RelativeLayout
+                    android:id="@+id/rl_profit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shadow"
+                    android:onClick="@{clickEvent.toBillClick}"
+                    android:padding="@dimen/margin16">
+
+                    <TextView
+                        android:id="@+id/title_profit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_vip_profile"
+                        android:drawablePadding="@dimen/margin8"
+                        android:gravity="center"
+                        android:text="我的收益"
+                        android:textColor="@color/color33"
+                        android:textSize="16sp"
+                        android:layout_marginBottom="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:drawableRight="@drawable/ic_arrow_right"
+                        android:drawablePadding="6dp"
+                        android:gravity="center"
+                        android:text="更多"
+                        android:textColor="@color/color99"
+                        android:textSize="12sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_below="@+id/title_profit">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_weight="1">
+                            <TextView
+                                android:id="@+id/tv_today_profit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="¥ 1513.5"
+                                android:textSize="16sp"
+                                android:textColor="@color/color33" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="今日收益"
+                                android:textSize="12sp"
+                                android:textColor="@color/color33"
+                                android:layout_below="@id/tv_today_profit"
+                                android:layout_marginTop="10dp"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/tv_month_profit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="6582.0"
+                                android:textSize="16sp"
+                                android:textColor="@color/color33"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="本月收益"
+                                android:textSize="12sp"
+                                android:textColor="@color/color33"
+                                android:layout_below="@id/tv_month_profit"
+                                android:layout_marginTop="10dp"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/tv_profit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="5445"
+                                android:textSize="16sp"
+                                android:textColor="@color/color33"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="总收益"
+                                android:textSize="12sp"
+                                android:textColor="@color/color33"
+                                android:layout_below="@id/tv_profit"
+                                android:layout_marginTop="10dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin16" />
+                <include
+                    android:id="@+id/layout_power"
+                    layout="@layout/vip_power" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

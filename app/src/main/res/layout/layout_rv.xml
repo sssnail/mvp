@@ -15,7 +15,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textColor="@color/colorBlue"
-            android:text="dddddddd"/>
+            android:text="dddddddd"
+            android:visibility="gone"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/list"

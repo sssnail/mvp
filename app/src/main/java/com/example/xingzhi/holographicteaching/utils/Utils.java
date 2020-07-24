@@ -1,6 +1,8 @@
 package com.example.xingzhi.holographicteaching.utils;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.text.Editable;
 import android.text.InputType;
@@ -10,8 +12,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.xingzhi.holographicteaching.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Utils {
 
@@ -132,6 +139,30 @@ public class Utils {
 
     public static String getImageUrl(){
         return "https://oimageb4.ydstatic.com/image?id=-2318081738758928284&product=adpublish&w=520&h=347";
+    }
+
+    public static void createTvLabels(Context context, LinearLayout layout, List<String> lists){
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT);
+        for (int i = 0; i < lists.size(); i++) {
+            TextView textView = new TextView(context);
+            layoutParams.setMargins(0, 5, 10, 5);
+            textView.setTextSize(12);
+            textView.setBackgroundResource(R.drawable.bg_blue_item); //设置背景
+            textView.setText(lists.get(i).toString());
+            textView.setTextColor(context.getColor(R.color.colorWhite));
+            textView.setTextSize(11);
+            textView.setLayoutParams(layoutParams);
+            layout.addView(textView);
+        }
+    }
+
+    public static List<String> getLabels(){
+        List<String> strings = new ArrayList<>();
+        for (int i = 0; i<3; i++){
+            strings.add("label"+i);
+        }
+        return strings;
     }
 
 

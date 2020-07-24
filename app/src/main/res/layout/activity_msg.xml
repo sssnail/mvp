@@ -13,8 +13,8 @@
         android:layout_height="match_parent"
         tools:context=".ui.activity.MsgActivity"
         android:orientation="vertical"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
+        android:paddingLeft="@dimen/margin16"
+        android:paddingRight="@dimen/margin16"
         android:paddingTop="10dp">
 
         <LinearLayout

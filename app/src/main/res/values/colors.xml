@@ -10,5 +10,8 @@
     <color name="colorView">#f2f2f2</color>
     <color name="color1a">#1A1A1A</color>
     <color name="color80">#808080</color>
+    <color name="colorWithdraw">#DFC685</color>
+    <color name="colortvWithdraw">#434956</color>
+    <color name="colortvOrange">#FF6E00</color>
 
 </resources>

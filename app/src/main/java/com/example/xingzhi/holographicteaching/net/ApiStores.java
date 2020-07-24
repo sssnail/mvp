@@ -9,8 +9,6 @@ import retrofit2.http.POST;
 import retrofit2.http.Path;
 /**
  * @explain
- * @author JC.
- * @creat time 2019/10/30 15:11.
  */
 public interface ApiStores {
 

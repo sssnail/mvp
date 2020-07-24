@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data></data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/margin16"
+        tools:context="com.example.xingzhi.holographicteaching.ui.activity.WithdrawActivity">
+
+        <include
+            android:id="@+id/title_layout"
+            layout="@layout/title_bar" />
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title_layout"
+            android:layout_marginTop="@dimen/margin16"
+            android:layout_marginBottom="@dimen/margin16"
+            android:text="选择提现方式"
+            android:textColor="@color/colorBlue"
+            android:textSize="18sp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:background="@drawable/shadow">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:drawableLeft="@drawable/ic_bankcard"
+                    android:drawablePadding="@dimen/margin16"
+                    android:text="银行卡"
+                    android:textColor="@color/color33"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/checkbox_selector"
+                    android:button="@null"
+                    android:checked="true" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0.5dp"
+                android:layout_weight="1" />
+
+            <RelativeLayout
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/tv"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/shadow">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:drawableLeft="@drawable/ic_alipay"
+                    android:drawablePadding="@dimen/margin16"
+                    android:text="支付宝"
+                    android:textColor="@color/color33"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/checkbox_selector"
+                    android:button="@null"
+                    android:checked="false" />
+            </RelativeLayout>
+        </RadioGroup>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/shadow"
+            android:orientation="vertical"
+            android:padding="@dimen/margin16">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="提现"
+                android:textColor="@color/color33"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/et_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_below="@id/title"
+                android:background="@null"
+                android:text="8563.16" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="35dp"
+                android:layout_below="@id/title"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_cancle" />
+            <View
+                android:id="@+id/divide"
+                style="@style/DivideView"
+                android:layout_below="@id/et_amount"
+                android:layout_marginBottom="5dp"/>
+            <TextView
+                android:id="@+id/tv_withMoney"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="可提现金额8563.16元"
+                android:textColor="@color/color99"
+                android:textSize="12sp"
+                android:layout_below="@id/divide"
+                android:layout_marginBottom="@dimen/margin16"/>
+
+            <EditText
+                android:id="@+id/et_code"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_below="@id/tv_withMoney"
+                android:background="@null"
+                android:textColor="@color/color99"
+                android:text="请输入验证码" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="获取验证码"
+                android:textColor="@color/colorWhite"
+                android:textSize="11sp"
+                android:gravity="center"
+                android:layout_below="@id/tv_withMoney"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/smallrs_blue_bg" />
+            <View
+                android:id="@+id/divide2"
+                style="@style/DivideView"
+                android:layout_below="@id/et_code"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/shadow"
+            android:orientation="vertical"
+            android:padding="@dimen/margin16">
+
+            <TextView
+                android:id="@+id/remark_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="备注"
+                android:textColor="@color/color33"
+                android:textSize="16sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(非必填)"
+                android:textColor="@color/color99"
+                android:textSize="12sp"
+                android:layout_toRightOf="@+id/remark_title"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_below="@id/remark_title"
+                android:background="@mipmap/bg_et_radius"
+                android:text="如有说明可在此处进行备注填写"
+                android:textColor="@color/color99"
+                android:textSize="12sp"
+                android:padding="@dimen/margin16"
+                android:gravity="left"
+                android:layout_marginTop="@dimen/margin16"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_withdraw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_radius_blue"
+            android:text="确认提现"
+            android:textSize="18sp"
+            android:textColor="@color/colorWhite"
+            android:gravity="center"
+            android:layout_marginTop="30dp"/>
+    </LinearLayout>
+</layout>

@@ -12,8 +12,6 @@ import io.reactivex.schedulers.Schedulers;
 
 /**
  * @explain 业务逻辑基类
- * @author JC.
- * @creat time 2019/10/30 15:14.
  */
 public class BasePresenter<V> {
     public V mvpView;

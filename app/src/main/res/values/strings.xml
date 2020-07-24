@@ -17,6 +17,9 @@
     <string name="title_mine">我的</string>
     <string name="mine_footprint">我的足迹：%1$s</string>
     <string name="mine_balance">¥%1$s</string>
+    <string name="vip_difi">1.激活码为官方部分活动的奖励，由系统下发给用户 \n
+2.郑重声明：官方禁止对会员激活码进行线下交易，若有用户私下交易激活码，可向官方进行举报，官方将以一定平台币作为奖励对举报人进行发放！并对交易者会员激活码进行收回处理！
+3.会员激活码将不享有会员的平台币返还福利！</string>
     <string name="get_verifycode">获取验证码</string>
 
     <string-array name="agreements">
@@ -26,6 +29,14 @@
     </string-array>
 
     <string name="agreement">我已阅读并同意《土豆用户协议》，《土豆隐私协议》与《土豆用户规范》</string>
+    <string name="withdraw_explain">
+*我的收益：【订单完成】状态下的订单奖励金额之和 \n
+*可提现金额：截止上一个结算周期，【订单完成】状态下的订单奖励金额之和 \n
+*提现前请绑定银行卡/支付宝\n
+*收益只可以在**、**日全天申请提现，错过需要等待下个月才可申请，单笔提现金额需大于**元\n
+*未提现的收益不会清零，将累计到您的账户余额，可下次合并进行申请提现\n
+*注意：退款的订单将会扣除奖励金！涉嫌违规的订单、无效的订单奖励金将会冻结！
+    </string>
     <!--    <string name="mine_balance"><Data><![CDATA[平台币余额:<font color="#FFC602"><b>%1$s</b></font> 元]]></Data></string>-->
 
 </resources>

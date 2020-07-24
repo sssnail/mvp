@@ -2,8 +2,6 @@ package com.example.xingzhi.holographicteaching.bean;
 
 /**
  * @explain  示例 天气模型
- * @author JC.
- * @creat time 2019/10/30 15:30.
  */
 public class MainModel {
 

@@ -2,12 +2,6 @@ package com.example.xingzhi.holographicteaching.base;
 
 import android.os.Bundle;
 
-
-/**
- * @explain
- * @author JC.
- * @creat time 2019/10/30 15:15.
- */
 public abstract class MvpActivity<P extends BasePresenter> extends BaseActivity {
     protected P mvpPresenter;
 

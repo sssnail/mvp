@@ -25,11 +25,6 @@ import com.tencent.mmkv.MMKV;
 //import butterknife.BindView;
 //import butterknife.ButterKnife;
 
-/**
- * @author JC.
- * @explain
- * @creat time 2019/10/30 15:29.
- */
 public class MainActivity extends FragmentActivity{
 
 

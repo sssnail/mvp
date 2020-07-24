@@ -10,16 +10,14 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp">
+        android:layout_marginTop="@dimen/margin16">
 
         <RelativeLayout
             android:id="@+id/relative"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/radius_white_bg"
-            android:padding="15dp"
-            android:elevation="1dp"
-            android:layout_margin="1dp">
+            android:background="@drawable/shadow"
+            android:padding="@dimen/margin16">
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -53,7 +51,7 @@
                     android:text="@{bean.content}"
                     android:textColor="@color/color33"
                     android:textSize="16sp"
-                    android:layout_marginTop="8dp"/>
+                    android:layout_marginTop="@dimen/margin8"/>
 
             </RelativeLayout>
 

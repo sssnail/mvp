@@ -9,7 +9,7 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="15dp">
+        android:layout_marginRight="@dimen/margin16">
         <ImageView
             android:id="@+id/iv_card"
             android:layout_width="110dp"

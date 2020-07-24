@@ -7,7 +7,7 @@
         android:id="@+id/open_record_date_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="15dp"
+        android:paddingTop="@dimen/margin16"
         android:text="今天"
         android:textColor="@color/color1a"
         android:textSize="16dp" />

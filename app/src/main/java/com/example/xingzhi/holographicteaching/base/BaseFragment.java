@@ -23,11 +23,6 @@ import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.observers.DisposableObserver;
 import retrofit2.Call;
 
-/**
- * @explain
- * @author JC.
- * @creat time 2019/10/30 15:14.
- */
 public abstract class BaseFragment extends Fragment {
     public Activity mActivity;
 

@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data></data>
+
+    <RelativeLayout
+        android:id="@+id/rl_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow"
+        android:padding="@dimen/margin16">
+
+        <TextView
+            android:id="@+id/title_vip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:drawableLeft="@drawable/ic_vip_power"
+            android:drawablePadding="@dimen/margin8"
+            android:gravity="center"
+            android:text="我的会员特权"
+            android:textColor="@color/color33"
+            android:textSize="16sp" />
+        <!-- 懒得写测试bean 后期写成rv -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_power"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title_vip"
+            android:nestedScrollingEnabled="false"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <RelativeLayout
+            android:id="@+id/rl_dis"
+            android:layout_width="95dp"
+            android:layout_height="120dp"
+            android:layout_below="@+id/title_vip"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/shadow"
+            android:paddingLeft="@dimen/margin8"
+            android:paddingTop="@dimen/margin8">
+
+            <TextView
+                android:id="@+id/card_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="充值折扣"
+                android:textColor="@color/color33"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/card_title"
+                android:layout_marginTop="@dimen/margin8"
+                android:text="a类   5折"
+                android:textColor="@color/color33"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_a"
+                android:layout_marginTop="@dimen/margin8"
+                android:text="a类   5折"
+                android:textColor="@color/color33"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/ic_power_discount" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="95dp"
+            android:layout_height="120dp"
+            android:layout_below="@+id/title_vip"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/shadow"
+            android:paddingLeft="@dimen/margin8"
+            android:paddingTop="@dimen/margin8">
+
+            <TextView
+                android:id="@+id/invite_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="邀请会员分成"
+                android:textColor="@color/color33"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/invite_title"
+                android:layout_marginTop="@dimen/margin8"
+                android:text="30%"
+                android:textColor="@color/colorBlue"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/ic_power_discount" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="95dp"
+            android:layout_height="120dp"
+            android:layout_below="@+id/title_vip"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/shadow"
+            android:paddingLeft="@dimen/margin8"
+            android:paddingTop="@dimen/margin8">
+
+            <TextView
+                android:id="@+id/share_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="邀请会员分成"
+                android:textColor="@color/color33"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/share_title"
+                android:layout_marginTop="@dimen/margin8"
+                android:text="30%"
+                android:textColor="@color/colorBlue"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/ic_power_discount" />
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin16"
+            android:layout_below="@+id/rl_dis" />
+
+        <RelativeLayout
+            android:layout_width="95dp"
+            android:layout_height="120dp"
+            android:layout_below="@+id/view"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/shadow"
+            android:paddingLeft="@dimen/margin8"
+            android:paddingTop="@dimen/margin8">
+
+            <TextView
+                android:id="@+id/consume_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="邀请普通消费"
+                android:textColor="@color/color33"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/con_a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/consume_title"
+                android:layout_marginTop="@dimen/margin8"
+                android:text="a类   5折"
+                android:textColor="@color/color33"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/con_a"
+                android:layout_marginTop="@dimen/margin8"
+                android:text="a类   5折"
+                android:textColor="@color/color33"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/ic_power_discount" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="95dp"
+            android:layout_height="120dp"
+            android:layout_below="@+id/view"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/shadow"
+            android:paddingLeft="@dimen/margin8"
+            android:paddingTop="@dimen/margin8">
+
+            <TextView
+                android:id="@+id/two_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="二级关联分成"
+                android:textColor="@color/color33"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/two_title"
+                android:layout_marginTop="@dimen/margin8"
+                android:text="30%"
+                android:textColor="@color/colorBlue"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/ic_power_discount" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="95dp"
+            android:layout_height="120dp"
+            android:layout_below="@+id/view"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/shadow"
+            android:paddingLeft="@dimen/margin8"
+            android:paddingTop="@dimen/margin8">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="会员专属客服"
+                android:textColor="@color/color33"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/ic_power_discount" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</layout>

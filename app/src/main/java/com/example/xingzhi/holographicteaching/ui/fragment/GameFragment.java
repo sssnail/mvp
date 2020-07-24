@@ -41,7 +41,7 @@ public class GameFragment extends Fragment {
             textView.setText(bundle.getString(EXTRA_TEXT));
         }
         Glide.with(getActivity()).load(Utils.getImageUrl()).into(binding.ivTop);
-        adapter = new OpenRecordAdapter();
+        adapter = new OpenRecordAdapter(getActivity());
         binding.openRecordRv.setAdapter(adapter);
         adapter.setDate(new OpenRecordModel().getData());
         adapter.setOnItemClickListener(new ItemListener() {
