@@ -123,11 +123,16 @@
                         </RelativeLayout>
                     </RelativeLayout>
 
-                    <ImageView
+                    <TextView
                         android:id="@+id/icon"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/relative"
+                        android:text="游戏礼包待领取"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="16sp"
+                        android:paddingLeft="35dp"
                         android:background="@mipmap/ic_detail_unget" />
 
                     <LinearLayout
@@ -180,11 +185,13 @@
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/tv_more_info"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/ll_left"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="20dp"
+                        android:padding="3dp"
                         android:text="点击查看更多开服信息"
                         android:textColor="@color/color99"
                         android:textSize="10sp" />

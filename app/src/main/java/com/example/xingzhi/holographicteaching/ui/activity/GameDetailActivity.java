@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -19,7 +20,7 @@ import com.example.xingzhi.holographicteaching.utils.Utils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GameDetailActivity extends AppCompatActivity {
+public class GameDetailActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ActivityGameDetailBinding binding;
     private DetailAcNoticeAdapter AcNoticeAdapter;
@@ -32,6 +33,8 @@ public class GameDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_game_detail);
+        binding.icon.setOnClickListener(this);
+        binding.tvMoreInfo.setOnClickListener(this);
         AcNoticeAdapter = new DetailAcNoticeAdapter(this);
         AcBeforeAdapter = new DetailAcNoticeAdapter(this);
         cardAdapter = new DetailCardAdapter(this);
@@ -57,5 +60,17 @@ public class GameDetailActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.icon:
+                startActivity(new Intent(GameDetailActivity.this, GameGiftGetActivity.class));
+                break;
+            case R.id.tv_more_info:
+                startActivity(new Intent(GameDetailActivity.this, AllOpenServiceActivity.class));
+                break;
+        }
     }
 }

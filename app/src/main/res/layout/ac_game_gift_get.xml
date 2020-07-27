@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<data></data>
+
+<LinearLayout
+    tools:context="com.example.xingzhi.holographicteaching.ui.activity.GameGiftGetActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/margin16"
+    android:paddingRight="@dimen/margin16"
+    android:paddingTop="10dp">
+
+    <include android:id="@+id/title_layout" layout="@layout/title_bar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/gift_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="LinearLayoutManager" />
+
+</LinearLayout>
+</layout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data></data>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin16">
+
+        <RelativeLayout
+            android:id="@+id/relative"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shadow"
+            android:padding="@dimen/margin16">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/item_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="武圣传奇新手礼包"
+                    android:textColor="@color/color66"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:id="@+id/item_discount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/item_number"
+                    android:layout_marginLeft="10dp"
+                    android:text="剩余95%"
+                    android:textColor="@color/colorGreen"
+                    android:textSize="12sp"
+                    android:background="@drawable/bg_green_border" />
+
+                <TextView
+                    android:id="@+id/item_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/item_number"
+                    android:hint="强化石*10、元宝*10000、银币*10W"
+                    android:textColor="@color/color99"
+                    android:textSize="10sp"
+                    android:layout_marginTop="6dp" />
+
+
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/item_install"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="领取"
+                android:textColor="@color/colorWhite"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:background="@drawable/bg_getgift"/>
+
+        </RelativeLayout>
+        <include android:id="@+id/llItemFoot" layout="@layout/footview" android:visibility="gone"/>
+
+    </RelativeLayout>
+</layout>
+

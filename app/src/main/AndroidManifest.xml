@@ -20,7 +20,13 @@
         android:theme="@style/AppTheme.NoActionBar"
         android:usesCleartextTraffic="true"
         tools:replace="android:appComponentFactory">
-        <activity android:name=".ui.activity.PartnerOrderActivity"></activity>
+        <activity android:name=".ui.activity.AllOpenServiceActivity"
+            android:theme="@style/ActivityDialogStyle" ></activity>
+        <activity android:name=".ui.activity.GameGiftGetActivity" />
+        <activity
+            android:name=".ui.activity.GameGiftActivity"
+            android:theme="@style/ActivityDialogStyle" />
+        <activity android:name=".ui.activity.PartnerOrderActivity" />
         <activity android:name=".ui.activity.PartnerActivity" />
         <activity android:name=".ui.activity.AccountBillActivity" />
         <activity android:name=".ui.activity.WdHistoryActivity" />

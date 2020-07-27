@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data></data>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/margin8"
+        android:layout_marginBottom="@dimen/margin16"
+        android:background="@drawable/bg_grey_solid">
+        <TextView
+            android:id="@+id/tv_district"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="传奇9服"
+            android:textColor="@color/color80"
+            android:layout_centerHorizontal="true"
+            android:textSize="10sp"
+            />
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="今天11:00"
+            android:textColor="@color/color33"
+            android:textSize="14sp"
+            android:layout_below="@id/tv_district"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="4dp"/>
+
+
+    </RelativeLayout>
+</layout>
+
