@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="bean"
+            type="com.example.xingzhi.holographicteaching.bean.DetailNoticeBean.DetailCardBean" />
+    </data>
+    <LinearLayout
+        android:layout_width="145dp"
+        android:layout_height="200dp"
+        android:layout_marginRight="@dimen/margin16"
+        android:paddingTop="@dimen/margin8"
+        android:paddingBottom="@dimen/margin8"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@mipmap/bg_new_game">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/game_icon" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="斗罗大陆3D"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp"
+            android:layout_marginTop="@dimen/margin8"/>
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12日开服"
+            android:textColor="@color/colorWhite"
+            android:textSize="12sp"
+            android:layout_marginTop="2dp"/>
+            <TextView
+                android:id="@+id/tv_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:text="预约"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp"
+                android:background="@drawable/bg_yellow"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/margin8"/>
+    </LinearLayout>
+
+</layout>
+

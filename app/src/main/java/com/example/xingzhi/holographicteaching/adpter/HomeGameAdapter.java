@@ -3,22 +3,22 @@ package com.example.xingzhi.holographicteaching.adpter;
 import android.content.Context;
 import android.view.View;
 
-
 import com.example.xingzhi.holographicteaching.R;
-import com.example.xingzhi.holographicteaching.databinding.ItemCenterFootprintBinding;
-import com.example.xingzhi.holographicteaching.listener.ItemListener;
 import com.example.xingzhi.holographicteaching.bean.ItemListModel;
+import com.example.xingzhi.holographicteaching.databinding.ItemCenterFootprintBinding;
+import com.example.xingzhi.holographicteaching.databinding.ItemHomeGameBinding;
+import com.example.xingzhi.holographicteaching.listener.ItemListener;
 import com.example.xingzhi.holographicteaching.utils.Utils;
 
 
-public class GameCenterAdapter extends BaseBindingAdapter<ItemListModel.ItemListBean, ItemCenterFootprintBinding> {
+public class HomeGameAdapter extends BaseBindingAdapter<ItemListModel.ItemListBean, ItemHomeGameBinding> {
     private static Context context;
     private boolean showFootView;
     public int total; //总数
-    ItemCenterFootprintBinding binding;
+    ItemHomeGameBinding binding;
     private ItemListener itemListener;
 
-    public GameCenterAdapter(Context context) {
+    public HomeGameAdapter(Context context) {
         super(context);
         this.context = context;
     }
@@ -33,15 +33,14 @@ public class GameCenterAdapter extends BaseBindingAdapter<ItemListModel.ItemList
 
     @Override
     protected int getLayoutResId(int viewType) {
-        return  R.layout.item_center_footprint;
+        return  R.layout.item_home_game;
     }
 
     @Override
-    protected void onBindItem(ItemCenterFootprintBinding footprintBinding, final ItemListModel.ItemListBean item, final int position) {
-        binding = footprintBinding;
+    protected void onBindItem(ItemHomeGameBinding binding, final ItemListModel.ItemListBean item, final int position) {
+        binding = binding;
         binding.setBean(item);
         Utils.createTvLabels(context, binding.llLabels, item.getLabels());
-        binding.executePendingBindings();
         if (itemListener != null){
             binding.itemNumber.setOnClickListener(new View.OnClickListener() {
                 @Override

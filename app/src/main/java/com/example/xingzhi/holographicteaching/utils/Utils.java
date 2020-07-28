@@ -160,7 +160,7 @@ public class Utils {
     public static List<String> getLabels(){
         List<String> strings = new ArrayList<>();
         for (int i = 0; i<3; i++){
-            strings.add("label"+i);
+            strings.add("传奇");
         }
         return strings;
     }

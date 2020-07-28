@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ui.activity.MsgCenterActivity"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="title"
+                android:textColor="@color/color1a"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:layout_marginRight="@dimen/margin8"/>
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="和兄弟一起重温攻沙热血！"
+                android:textColor="@color/color99"
+                android:textSize="12sp"
+                android:layout_toRightOf="@id/tv_title"
+                android:visibility="gone"
+                android:gravity="center" />
+            <ImageView
+                android:id="@+id/iv_fire"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_fire"
+                android:layout_toRightOf="@id/tv_title"
+                android:gravity="center"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/tv_more"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="更多"
+                android:textSize="12sp"
+                android:textColor="@color/color99"
+                android:padding="3dp"
+                android:gravity="center"
+                android:drawableRight="@drawable/ic_arrow_right"
+                android:drawablePadding="8dp"
+                android:layout_alignParentRight="true"
+                />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</layout>
