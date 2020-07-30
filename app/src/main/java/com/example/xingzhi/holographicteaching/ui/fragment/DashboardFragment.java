@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,12 +18,8 @@ import com.example.xingzhi.holographicteaching.R;
 import com.example.xingzhi.holographicteaching.databinding.FragmentDashboardBinding;
 import com.example.xingzhi.holographicteaching.ui.activity.AccountBillActivity;
 import com.example.xingzhi.holographicteaching.ui.activity.ActivateVipActivity;
-import com.example.xingzhi.holographicteaching.ui.activity.GameCenterActivity;
-import com.example.xingzhi.holographicteaching.ui.activity.LoginActivity;
-import com.example.xingzhi.holographicteaching.ui.activity.MineCenterActivity;
-import com.example.xingzhi.holographicteaching.ui.activity.MsgActivity;
+import com.example.xingzhi.holographicteaching.ui.activity.MyProfitActivity;
 import com.example.xingzhi.holographicteaching.ui.activity.PartnerActivity;
-import com.example.xingzhi.holographicteaching.ui.activity.PartnerOrderActivity;
 import com.example.xingzhi.holographicteaching.ui.activity.WidrawExplainActivity;
 import com.example.xingzhi.holographicteaching.viewmodel.DashboardViewModel;
 
@@ -39,7 +34,7 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
         dashboardViewModel = ViewModelProviders.of(this).get(DashboardViewModel.class);
         binding = DataBindingUtil.inflate(inflater,  R.layout.fragment_dashboard, container, false);
         binding.setClickEvent(new VipClickEvent());
-        binding.layoutPower.rlLayout.setOnClickListener(this);
+        binding.layoutPower.titleVip.setOnClickListener(this);
 //        final TextView textView = root.findViewById(R.id.text_dashboard);
         Log.d("ddd", "DashboardFragment");
         dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
@@ -55,7 +50,7 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.title_vip:
-                startActivity(new Intent(getActivity(), PartnerOrderActivity.class));
+                startActivity(new Intent(getActivity(), MyProfitActivity.class));
                 break;
         }
     }

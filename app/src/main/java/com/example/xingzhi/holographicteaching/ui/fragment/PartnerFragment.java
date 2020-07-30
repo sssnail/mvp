@@ -1,5 +1,6 @@
 package com.example.xingzhi.holographicteaching.ui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,7 @@ import com.example.xingzhi.holographicteaching.adpter.PartnerAdapter;
 import com.example.xingzhi.holographicteaching.bean.ItemListModel;
 import com.example.xingzhi.holographicteaching.databinding.LayoutRvBinding;
 import com.example.xingzhi.holographicteaching.listener.ItemListener;
+import com.example.xingzhi.holographicteaching.ui.activity.PartnerOrderActivity;
 import com.example.xingzhi.holographicteaching.utils.Utils;
 
 /**
@@ -52,7 +54,7 @@ public class PartnerFragment extends Fragment {
         adapter.setOnItemClickListener(new ItemListener() {
             @Override
             public void itemClick(int i) {
-                Toast.makeText(getActivity(), String.valueOf(i).concat("点击了"), Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getActivity(), PartnerOrderActivity.class));
             }
         });
 

@@ -34,7 +34,7 @@ public class PartnerOrderActivity extends AppCompatActivity implements View.OnCl
 
 
     private ActivityPartnerBinding binding;
-    private static final String[] CHANNELS = new String[]{"我的伙伴", "我的会员", "今日新增伙伴", "今日新增会员"};
+    private static final String[] CHANNELS = new String[]{"游戏订单", "会员订单"};
     private List<Fragment> mFragments = new ArrayList<Fragment>();
     private FragmentContainerHelper mFragmentContainerHelper = new FragmentContainerHelper();
     @Override

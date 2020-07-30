@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="06-27  10:36"
+                android:textColor="@color/color66"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:layout_weight="1"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="175****8511"
+                android:textColor="@color/color66"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:layout_weight="1"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="升级会员"
+                android:textColor="@color/color66"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:layout_weight="1"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="¥699.6"
+                android:textColor="@color/colortvOrange"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        <View style="@style/DivideView" />
+        <include android:id="@+id/llItemFoot" layout="@layout/footview" android:visibility="gone"/>
+
+    </LinearLayout>
+</layout>
+

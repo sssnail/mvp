@@ -23,7 +23,7 @@
             android:text="我的会员特权"
             android:textColor="@color/color33"
             android:textSize="16sp" />
-        <!-- 懒得写测试bean 后期写成rv -->
+        <!-- 懒得写测试bean 后期改成rv -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_power"
             android:layout_width="match_parent"

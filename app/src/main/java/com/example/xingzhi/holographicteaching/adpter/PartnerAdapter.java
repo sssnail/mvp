@@ -41,7 +41,7 @@ public class PartnerAdapter extends BaseBindingAdapter<ItemListModel.ItemListBea
         binding.setBean(item);
         binding.executePendingBindings();
         if (itemListener != null){
-            binding.itemNumber.setOnClickListener(new View.OnClickListener() {
+            binding.relative.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     itemListener.itemClick(position);

@@ -73,8 +73,7 @@
                 android:layout_below="@+id/item_order_date"
                 android:text="土豆游戏白金会员"
                 android:textColor="@color/color66"
-                android:textSize="16sp"
-                android:layout_marginBottom="5dp"/>
+                android:textSize="16sp"/>
             <TextView
                 android:id="@+id/item_number"
                 android:layout_width="wrap_content"
@@ -84,8 +83,7 @@
                 android:layout_below="@id/item_title"
                 android:text="商品金额:¥2980"
                 android:textColor="@color/color99"
-                android:textSize="14sp"
-                android:layout_marginBottom="5dp"/>
+                android:textSize="14sp"/>
 
             <TextView
                 android:id="@+id/item_content"
