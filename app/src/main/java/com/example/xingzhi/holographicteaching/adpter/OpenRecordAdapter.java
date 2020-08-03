@@ -50,7 +50,7 @@ public class OpenRecordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.open_record_title, parent, false);
             holder = new ViewHolderTitle(view);
         } else if (viewType == ITEM_CONTENT) {
-            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_center_footprint, parent, false);
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_home_game, parent, false);
             holder = new ViewHolderContent(view);
 
         }

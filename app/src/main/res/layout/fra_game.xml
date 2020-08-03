@@ -51,75 +51,7 @@
                     android:textColor="@color/colorWhite"
                     android:textSize="14sp"/>
             </LinearLayout>
-<!-- 精品推荐 -->
-            <include android:id="@+id/recomment_title" layout="@layout/layout_game_title" />
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_recom_card"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:nestedScrollingEnabled="false"
-                android:layout_marginBottom="30dp"/>
-<!--热门游戏-->
-            <include android:id="@+id/hot_game_title" layout="@layout/layout_game_title" />
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_hot_game"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:nestedScrollingEnabled="false"
-                android:layout_marginBottom="30dp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
-<!--新游预告-->
-            <include android:id="@+id/new_game_title" layout="@layout/layout_game_title" />
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_new_game_card"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:nestedScrollingEnabled="false"/>
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_new_game"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:nestedScrollingEnabled="false"
-                android:layout_marginBottom="30dp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
-            <!--传奇-->
-            <include android:id="@+id/legend_title" layout="@layout/layout_game_title" />
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@mipmap/legend"/>
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_legend"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:nestedScrollingEnabled="false"
-                android:layout_marginBottom="30dp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
-            <!--卡牌-->
-            <include android:id="@+id/card_title" layout="@layout/layout_game_title" />
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@mipmap/legend"/>
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_card"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:nestedScrollingEnabled="false"
-                android:layout_marginBottom="30dp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
-
-            <!--热门类型-->
-            <include android:id="@+id/hot_type_title" layout="@layout/layout_game_title" />
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_hot_type"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:nestedScrollingEnabled="false"
-                android:layout_marginBottom="30dp"/>
-
-            <include layout="@layout/footview" />
-
+<!--            后续用rv-->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/open_record_rv"
                 android:layout_width="match_parent"
@@ -127,6 +59,9 @@
                 android:nestedScrollingEnabled="false"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:visibility="gone"/>
+            <include android:id="@+id/home_fra_layout" layout="@layout/home_fra_layout" />
+
+            <include layout="@layout/footview" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

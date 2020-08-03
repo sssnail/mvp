@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data></data>
+
+    <LinearLayout
+        android:id="@+id/rl_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!-- 精品推荐 -->
+        <include android:id="@+id/recomment_title" layout="@layout/layout_game_title" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_recom_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginBottom="30dp"/>
+        <!--热门游戏-->
+        <include android:id="@+id/hot_game_title" layout="@layout/layout_game_title" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_hot_game"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginBottom="30dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        <!--新游预告-->
+        <include android:id="@+id/new_game_title" layout="@layout/layout_game_title" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_new_game_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_new_game"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginBottom="30dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        <!--传奇-->
+        <include android:id="@+id/legend_title" layout="@layout/layout_game_title" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/legend"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_legend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginBottom="30dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        <!--卡牌-->
+        <include android:id="@+id/card_title" layout="@layout/layout_game_title" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/legend"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginBottom="30dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        <!--三国-->
+        <include android:id="@+id/nation_title" layout="@layout/layout_game_title" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/legend"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_nation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginBottom="30dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        <!--RPG-->
+        <include android:id="@+id/prg_title" layout="@layout/layout_game_title" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/legend"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_prg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginBottom="30dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+        <!--热门类型-->
+        <include android:id="@+id/hot_type_title" layout="@layout/layout_game_title" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_hot_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginBottom="30dp"/>
+    </LinearLayout>
+
+</layout>

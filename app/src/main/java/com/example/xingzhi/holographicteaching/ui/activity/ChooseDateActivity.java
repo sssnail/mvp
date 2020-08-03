@@ -45,7 +45,7 @@ public class ChooseDateActivity extends AppCompatActivity implements View.OnClic
             }
         })
                 //年月日时分秒 的显示与否，不设置则默认全部显示
-                .setType(new boolean[]{true, true, true, false, false, false})
+                .setType(new boolean[]{false, false, false, false, false, false})
                 .setLabel("", "", "", "", "", "")
                 .isCenterLabel(true)
                 .setDividerColor(Color.DKGRAY)

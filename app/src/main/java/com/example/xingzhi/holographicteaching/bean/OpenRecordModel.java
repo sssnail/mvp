@@ -43,12 +43,12 @@ public class OpenRecordModel {
         //精品推荐
             OpenRecordBean.DataBean data1 = new OpenRecordBean.DataBean();
             data1.setType(1);
-            data1.setDateTitle("精品推荐");
+            data1.setDateTitle("今日开服");
             data1.setItemListBeans(getLogLists(1));
             //热门游戏
             OpenRecordBean.DataBean data2 = new OpenRecordBean.DataBean();
             data2.setType(2);
-            data2.setDateTitle("精品推荐");
+            data2.setDateTitle("全部新游");
             data2.setItemListBeans(getLogLists(1));
             //新游预告
             OpenRecordBean.DataBean data3 = new OpenRecordBean.DataBean();
@@ -83,12 +83,12 @@ public class OpenRecordModel {
 
             dataBeans.add(data1);
             dataBeans.add(data2);
-            dataBeans.add(data3);
-            dataBeans.add(data4);
-            dataBeans.add(data5);
-            dataBeans.add(data6);
-            dataBeans.add(data7);
-            dataBeans.add(data8);
+//            dataBeans.add(data3);
+//            dataBeans.add(data4);
+//            dataBeans.add(data5);
+//            dataBeans.add(data6);
+//            dataBeans.add(data7);
+//            dataBeans.add(data8);
 //        }
         return dataBeans;
     }
