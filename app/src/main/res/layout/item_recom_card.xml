@@ -15,29 +15,35 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:background="#ddf9f9f9"
             android:layout_alignParentBottom="true"
-            android:paddingLeft="@dimen/margin8">
+            android:background="@color/colorBlack">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ddf9f9f9"
+                android:paddingLeft="@dimen/margin8">
 
-            <TextView
-                android:id="@+id/tv_desc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="全方位体验一个不一样的..."
-                android:lines="1"
-                android:ellipsize="end"
-                android:textColor="@color/colorWhite"
-                android:textSize="10sp"
-                android:layout_marginBottom="3dp"
-                android:layout_alignParentBottom="true" />
-            <TextView
-                android:id="@+id/tv_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="烈焰主宰"
-                android:textColor="@color/colorWhite"
-                android:textSize="14sp"
-                android:layout_above="@id/tv_desc"/>
+                <TextView
+                    android:id="@+id/tv_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="全方位体验一个不一样的..."
+                    android:lines="1"
+                    android:ellipsize="end"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="10sp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_alignParentBottom="true" />
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="烈焰主宰"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="14sp"
+                    android:layout_above="@id/tv_desc"/>
+            </RelativeLayout>
+
         </RelativeLayout>
     </RelativeLayout>
 

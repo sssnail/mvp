@@ -41,6 +41,7 @@ public class HomeGameAdapter extends BaseBindingAdapter<ItemListModel.ItemListBe
         binding = binding;
         binding.setBean(item);
         Utils.createTvLabels(context, binding.llLabels, item.getLabels());
+//        binding.ivRanking.setVisibility(View.VISIBLE);
         if (itemListener != null){
             binding.itemNumber.setOnClickListener(new View.OnClickListener() {
                 @Override

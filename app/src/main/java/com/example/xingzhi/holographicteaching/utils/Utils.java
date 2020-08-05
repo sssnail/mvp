@@ -8,14 +8,17 @@ import android.text.Editable;
 import android.text.InputType;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.xingzhi.holographicteaching.R;
+import com.example.xingzhi.holographicteaching.view.WarpLinearLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -126,6 +129,42 @@ public class Utils {
             }
         }
     }
+    public static class TextChangedListener4 implements TextWatcher{
+        private EditText et1, et2, et3, et4;
+        private Button button;
+        private static boolean isChecked;
+        public TextChangedListener4(EditText et1,EditText et2,EditText et3,EditText et4,Button button) {
+            this.et1 = et1;
+            this.et2 = et2;
+            this.et3 = et3;
+            this.et4 = et4;
+            this.button = button;
+            et1.addTextChangedListener(this);
+            et2.addTextChangedListener(this);
+            et3.addTextChangedListener(this);
+            et4.addTextChangedListener(this);
+        }
+        public static void setCheck(boolean flag){
+            isChecked = flag;
+        }
+
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            button.setEnabled(false);
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+            if ( !( TextUtils.isEmpty(et1.getText().toString()) || TextUtils.isEmpty(et2.getText().toString()) || TextUtils.isEmpty(et3.getText().toString()) ||  TextUtils.isEmpty(et4.getText().toString()) || !isChecked) ){
+                button.setEnabled(true);
+            }
+        }
+    }
 
     public static void setInputPwdStatus(boolean showPwd, EditText et, ImageView iv){
         if (!showPwd){
@@ -164,6 +203,31 @@ public class Utils {
         }
         return strings;
     }
+
+    public static void ScrollViewLayout(final Context context, final List<String> list, WarpLinearLayout lay_gallery) {//List<LinkedTreeMap<String, Object>> list
+        lay_gallery.removeAllViews();
+        LayoutInflater mInflater = LayoutInflater.from(context);
+        if (list != null && list.size() != 0) {
+            for (int i = 0; i < list.size(); i++) {
+                final View view = mInflater.inflate(R.layout.item_hot_search, lay_gallery, false);//添加的view,这里很简单就是一个TextView
+                final TextView tv_search_tag_name = (TextView) view.findViewById(R.id.tv);
+                tv_search_tag_name.setText(list.get(i));
+                final int finalI = i;
+                tv_search_tag_name.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //处理点击事件
+                        Toast.makeText(context, list.get(finalI).toString(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+
+                lay_gallery.addView(view);
+            }
+        }
+    }
+
+    public static final String DefaultAccount = "a";
 
 
 

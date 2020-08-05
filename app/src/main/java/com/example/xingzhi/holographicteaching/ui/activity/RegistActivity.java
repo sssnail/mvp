@@ -5,6 +5,7 @@ import androidx.databinding.DataBindingUtil;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.CompoundButton;
@@ -18,14 +19,16 @@ import com.example.xingzhi.holographicteaching.view.AgreementTextView;
 public class RegistActivity extends AppCompatActivity {
     private ActivityRegistBinding binding;
     private boolean showPwd;
+    private Handler handler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_regist);
+        handler = new Handler();
         binding.setClickEvent(new RegistOnClick());
         binding.titleLayout.tvTitle.setText("注册");
-        new Utils.TextChangedListener3(binding.etMobile, binding.etPwd, binding.etInviteCode, binding.button);
-        Utils.TextChangedListener3.setCheck(true);
+        new Utils.TextChangedListener4(binding.etMobile, binding.etCode, binding.etPwd, binding.etInviteCode, binding.button);
+        Utils.TextChangedListener4.setCheck(true);
         binding.titleLayout.ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,6 +50,9 @@ public class RegistActivity extends AppCompatActivity {
         public void toLoginOnClick(View view){
             startActivity(new Intent(RegistActivity.this, LoginActivity.class));
         }
+        public void getCodeOnClick(View view){
+            Utils.startCodeTime(RegistActivity.this, binding.getCode, handler, 60);
+        }
         public void cancelOnClick(View view){
             binding.etMobile.setText(null);
         }
@@ -55,7 +61,7 @@ public class RegistActivity extends AppCompatActivity {
             Utils.setInputPwdStatus(showPwd, binding.etPwd, binding.ivPwd);
         }
         public void checkBoxOnClick(CompoundButton buttonView, boolean isChecked){
-            Utils.TextChangedListener3.setCheck(isChecked);
+            Utils.TextChangedListener4.setCheck(isChecked);
             if ( TextUtils.isEmpty(binding.etMobile.getText().toString()) ||
                 TextUtils.isEmpty(binding.etPwd.getText().toString()) ||
                  TextUtils.isEmpty(binding.etInviteCode.getText().toString()) ){
@@ -63,5 +69,11 @@ public class RegistActivity extends AppCompatActivity {
             }
             binding.button.setEnabled(isChecked);
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (handler != null) handler.removeCallbacksAndMessages(null);
+        super.onDestroy();
     }
 }

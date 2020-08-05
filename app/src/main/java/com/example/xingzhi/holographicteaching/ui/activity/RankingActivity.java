@@ -89,7 +89,7 @@ public class RankingActivity extends AppCompatActivity {
                 LinePagerIndicator indicator = new LinePagerIndicator(context);
                 indicator.setMode(MODE_EXACTLY);
                 indicator.setColors(Color.parseColor("#017BFF"));
-                indicator.setLineWidth(25);
+                indicator.setLineWidth(30);
                 return indicator;
             }
         });

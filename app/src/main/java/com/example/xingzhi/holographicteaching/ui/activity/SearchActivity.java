@@ -8,12 +8,15 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 
 import com.example.xingzhi.holographicteaching.R;
+import com.example.xingzhi.holographicteaching.core.RecordsDao;
 import com.example.xingzhi.holographicteaching.databinding.ActivitySearchBinding;
+import com.example.xingzhi.holographicteaching.ui.fragment.GameFragment;
 import com.example.xingzhi.holographicteaching.ui.fragment.SearchHistoryFragment;
 import com.example.xingzhi.holographicteaching.ui.fragment.SearchResultFragment;
 import com.example.xingzhi.holographicteaching.utils.Utils;
@@ -31,12 +34,15 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
     public static FragmentTransaction transaction;
     private int SEARCH_HISTORY = 0;
     private int SEARCH_RESULT = 1;
+    public static final String InputEditString = "InputEditString";
+    public static RecordsDao mRecordsDao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_search);
+        mRecordsDao = new RecordsDao(SearchActivity.this, Utils.DefaultAccount);
         Utils.setInputEtShowIconListener(binding.etSearch, binding.ivCancel);
         binding.ivCancel.setOnClickListener(this);
         binding.tvSearch.setOnClickListener(this);
@@ -61,6 +67,10 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
                 binding.etSearch.setText(null);
                 break;
             case R.id.tv_search:
+                if (!TextUtils.isEmpty(binding.etSearch.getText().toString())) {
+                    //添加数据
+                    mRecordsDao.addRecords(binding.etSearch.getText().toString());
+                }
                 setFraChanged(SEARCH_RESULT);
                 break;
             case R.id.iv_back:
@@ -95,7 +105,17 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         fragmentManager = getSupportFragmentManager();
         transaction = fragmentManager.beginTransaction();
         curFragment = fragments.get(index);
+        Bundle bundle = new Bundle();
+        bundle.putString(InputEditString, binding.etSearch.toString());
+        curFragment.setArguments(bundle);
         transaction.replace(R.id.fragment_container, curFragment);
         transaction.commit();
+    }
+
+    @Override
+    protected void onDestroy() {
+        mRecordsDao.closeDatabase();
+        mRecordsDao.removeNotifyDataChanged();
+        super.onDestroy();
     }
 }

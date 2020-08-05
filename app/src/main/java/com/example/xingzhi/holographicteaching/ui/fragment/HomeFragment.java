@@ -32,11 +32,14 @@ import net.lucode.hackware.magicindicator.buildins.commonnavigator.CommonNavigat
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.CommonNavigatorAdapter;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerIndicator;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerTitleView;
+import net.lucode.hackware.magicindicator.buildins.commonnavigator.indicators.LinePagerIndicator;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.SimplePagerTitleView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import static net.lucode.hackware.magicindicator.buildins.commonnavigator.indicators.LinePagerIndicator.MODE_EXACTLY;
 
 public class HomeFragment extends MvpFragment<MainPresenter> implements MainView, View.OnClickListener {
 
@@ -188,7 +191,11 @@ public class HomeFragment extends MvpFragment<MainPresenter> implements MainView
 
             @Override
             public IPagerIndicator getIndicator(Context context) {
-                return null;
+                LinePagerIndicator indicator = new LinePagerIndicator(context);
+                indicator.setMode(MODE_EXACTLY);
+                indicator.setColors(Color.parseColor("#017BFF"));
+                indicator.setLineWidth(25);
+                return indicator;
             }
         });
         homeBinding.magicIndicator6.setNavigator(commonNavigator);

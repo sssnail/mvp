@@ -14,5 +14,7 @@
     <color name="colortvWithdraw">#434956</color>
     <color name="colortvOrange">#FF6E00</color>
     <color name="colorGreen">#03E694</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorRed">#D81E06</color>
 
 </resources>

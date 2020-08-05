@@ -145,7 +145,7 @@
                         android:orientation="horizontal"
                         android:layout_below="@+id/title_partner">
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
                             android:gravity="center"
@@ -166,8 +166,9 @@
                                 android:layout_below="@id/tv_partner"
                                 android:layout_marginTop="10dp"/>
                         </LinearLayout>
+                        <View style="@style/DivideViewSlice" android:layout_gravity="center"/>
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -188,8 +189,9 @@
                                 android:layout_below="@id/tv_vip"
                                 android:layout_marginTop="10dp"/>
                         </LinearLayout>
+                        <View style="@style/DivideViewSlice" android:layout_gravity="center"/>
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -210,8 +212,9 @@
                                 android:layout_below="@id/tv_increase_pa"
                                 android:layout_marginTop="10dp"/>
                         </LinearLayout>
+                        <View style="@style/DivideViewSlice" android:layout_gravity="center"/>
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -279,7 +282,7 @@
                         android:orientation="horizontal"
                         android:layout_below="@+id/title_profit">
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
                             android:gravity="center"
@@ -300,8 +303,9 @@
                                 android:layout_below="@id/tv_today_profit"
                                 android:layout_marginTop="10dp"/>
                         </LinearLayout>
+                        <View style="@style/DivideViewSlice" android:layout_gravity="center"/>
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -322,8 +326,9 @@
                                 android:layout_below="@id/tv_month_profit"
                                 android:layout_marginTop="10dp"/>
                         </LinearLayout>
+                        <View style="@style/DivideViewSlice" android:layout_gravity="center"/>
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"

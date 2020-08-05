@@ -1,11 +1,14 @@
 package com.example.xingzhi.holographicteaching.ui.fragment;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
@@ -25,9 +28,15 @@ import com.example.xingzhi.holographicteaching.bean.ItemListModel;
 import com.example.xingzhi.holographicteaching.bean.OpenRecordModel;
 import com.example.xingzhi.holographicteaching.databinding.FraGameBinding;
 import com.example.xingzhi.holographicteaching.listener.ItemListener;
+import com.example.xingzhi.holographicteaching.ui.MainActivity;
 import com.example.xingzhi.holographicteaching.ui.activity.GameDetailActivity;
 import com.example.xingzhi.holographicteaching.ui.activity.RankingActivity;
+import com.example.xingzhi.holographicteaching.utils.GlideImageLoader;
 import com.example.xingzhi.holographicteaching.utils.Utils;
+import com.example.xingzhi.holographicteaching.view.BannerLayout;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class GameFragment extends Fragment implements View.OnClickListener {
@@ -38,6 +47,7 @@ public class GameFragment extends Fragment implements View.OnClickListener {
     private HomeGameAdapter hotGameAdapter;
     private HomeNewGameAdapter newGameAdapter;
     private HomeHotTypeAdapter hotTypeAdapter;
+    private List bannerList;
 
     @Nullable
     @Override
@@ -54,6 +64,10 @@ public class GameFragment extends Fragment implements View.OnClickListener {
         if (bundle != null) {
             textView.setText(bundle.getString(EXTRA_TEXT));
         }
+        bannerList = new ArrayList();
+        bannerList.add(Utils.getImageUrl());
+        bannerList.add(Utils.getImageUrl());
+        bannerList.add(Utils.getImageUrl());
 
         /**
          * 此为动态生成title和content， 现在暂时先固定内容
@@ -63,6 +77,17 @@ public class GameFragment extends Fragment implements View.OnClickListener {
 
 
           if (bundle.getString(EXTRA_TEXT).equals("推荐")){
+
+              //设置加载器
+              binding.banner.setImageLoader(new GlideImageLoader());
+              binding.banner.setViewUrls(bannerList);
+//添加点击监听
+              binding.banner.setOnBannerItemClickListener(new BannerLayout.OnBannerItemClickListener() {
+                  @Override
+                  public void onItemClick(int position) {
+                      Toast.makeText(getActivity(), String.valueOf(position), Toast.LENGTH_SHORT).show();
+                  }
+              });
               //精品推荐部分处理
               binding.homeFraLayout.recommentTitle.tvTitle.setText("精品推荐");
               gameCardAdapter = new GameCardAdapter(getActivity());
@@ -128,6 +153,7 @@ public class GameFragment extends Fragment implements View.OnClickListener {
           }else {
               binding.homeFraLayout.rlLayout.setVisibility(View.GONE);
               binding.llRanking.setVisibility(View.GONE);
+              binding.banner.setVisibility(View.GONE);
               binding.openRecordRv.setVisibility(View.VISIBLE);
               adapter = new OpenRecordAdapter(getActivity());
               binding.openRecordRv.setAdapter(adapter);
