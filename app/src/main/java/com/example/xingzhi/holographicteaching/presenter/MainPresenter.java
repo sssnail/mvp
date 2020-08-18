@@ -15,27 +15,27 @@ public class MainPresenter extends BasePresenter<MainView> {
         attachView(view);
     }
 
-    public void loadDataByRetrofitRxjava(String cityId) {
-        mvpView.showLoading();
-        addSubscription(apiStores.LoginRequest(cityId),
-                new ApiCallback<MainModel>() {
-                    @Override
-                    public void onSuccess(MainModel model) {
-                        mvpView.getMainModelSuccess(model);
-                    }
-
-                    @Override
-                    public void onFailure(String msg) {
-                        mvpView.getMainModelFail(msg);
-                    }
-
-
-                    @Override
-                    public void onFinish() {
-                        mvpView.hideLoading();
-                    }
-
-                });
-    }
+//    public void loadDataByRetrofitRxjava(String cityId) {
+//        mvpView.showLoading();
+//        addSubscription(apiStores.loadDataByRetrofit(cityId),
+//                new ApiCallback<MainModel>() {
+//                    @Override
+//                    public void onSuccess(MainModel model) {
+//                        mvpView.getMainModelSuccess(model);
+//                    }
+//
+//                    @Override
+//                    public void onFailure(String msg) {
+//                        mvpView.getMainModelFail(msg);
+//                    }
+//
+//
+//                    @Override
+//                    public void onFinish() {
+//                        mvpView.hideLoading();
+//                    }
+//
+//                });
+//    }
 
 }

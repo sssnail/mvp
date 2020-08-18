@@ -16,6 +16,7 @@
     <string name="title_vip">会员</string>
     <string name="title_mine">我的</string>
     <string name="mine_footprint">我的足迹：%1$s</string>
+    <string name="mine_uid">平台币：%1$s</string>
     <string name="mine_balance">¥%1$s</string>
     <string name="vip_difi">1.激活码为官方部分活动的奖励，由系统下发给用户 \n
 2.郑重声明：官方禁止对会员激活码进行线下交易，若有用户私下交易激活码，可向官方进行举报，官方将以一定平台币作为奖励对举报人进行发放！并对交易者会员激活码进行收回处理！

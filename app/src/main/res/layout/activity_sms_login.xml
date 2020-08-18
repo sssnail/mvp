@@ -93,6 +93,7 @@
                 android:textSize="18sp"
                 android:gravity="center"
                 android:background="@drawable/button_selector"
+                android:onClick="@{clickEvent::LoginOnClick}"
                 android:enabled="false"
                 android:layout_marginTop="70dp"
                 />
@@ -100,28 +101,36 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_margin="@dimen/margin16"
                 android:gravity="center">
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="注册账号"
                     android:textColor="@color/color33"
                     android:padding="3dp"
+                    android:gravity="center"
                     android:onClick="@{clickEvent::toRegisteOnClick}"/>
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="短信登录"
                     android:textColor="@color/color33"
                     android:layout_margin="@dimen/margin16"
                     android:padding="3dp"
+                    android:visibility="gone"
+                    android:gravity="center"
                     android:onClick="@{clickEvent::toLoginOnClick}"/>
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="忘记密码"
                     android:textColor="@color/color33"
                     android:padding="3dp"
+                    android:gravity="center"
                     android:onClick="@{clickEvent::toForgetPwdOnClick}"/>
             </LinearLayout>
         </LinearLayout>

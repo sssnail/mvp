@@ -1,8 +1,5 @@
 package com.example.xingzhi.holographicteaching.ui.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,18 +8,29 @@ import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 
-import com.example.xingzhi.holographicteaching.R;
-import com.example.xingzhi.holographicteaching.databinding.ActivityRegistBinding;
-import com.example.xingzhi.holographicteaching.utils.Utils;
-import com.example.xingzhi.holographicteaching.view.AgreementTextView;
+import androidx.databinding.DataBindingUtil;
 
-public class RegistActivity extends AppCompatActivity {
+import com.example.xingzhi.holographicteaching.R;
+import com.example.xingzhi.holographicteaching.base.MvpActivity;
+import com.example.xingzhi.holographicteaching.bean.BaseResultBean;
+import com.example.xingzhi.holographicteaching.bean.LoginResultBean;
+import com.example.xingzhi.holographicteaching.databinding.ActivityRegistBinding;
+import com.example.xingzhi.holographicteaching.presenter.LoginPresenter;
+import com.example.xingzhi.holographicteaching.utils.Utils;
+import com.example.xingzhi.holographicteaching.view.ActivityStackManager;
+import com.example.xingzhi.holographicteaching.view.AgreementTextView;
+import com.example.xingzhi.holographicteaching.view.UserView;
+
+public class RegistActivity extends MvpActivity<LoginPresenter> implements UserView {
     private ActivityRegistBinding binding;
     private boolean showPwd;
     private Handler handler;
+    private ActivityStackManager activityStackManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        activityStackManager = ActivityStackManager.getInstance(this);
+        activityStackManager.addBackupView(RegistActivity.this);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_regist);
         handler = new Handler();
         binding.setClickEvent(new RegistOnClick());
@@ -45,13 +53,55 @@ public class RegistActivity extends AppCompatActivity {
         Utils.setInputEtShowIconListener(binding.etPwd, binding.ivPwd);
 
     }
+    @Override
+    protected LoginPresenter createPresenter() {
+        return new LoginPresenter(this);
+    }
+
+    @Override
+    public void getUserModelSuccess(LoginResultBean bean) {
+        //接口成功回调
+        dataSuccess(bean);
+    }
+
+
+    @Override
+    public void getUserModelFail(String msg) {
+        toastShow(getString(R.string.net_error));
+    }
+
+    @Override
+    public void sendSMSSuccess(BaseResultBean bean) {
+        if (bean.getCode() != Utils.SUCCESS_CODE ){
+            toastShow(bean.getMsg());
+            return;
+        }
+        Utils.startCodeTime(RegistActivity.this, binding.getCode, handler, 60);
+    }
+
+    @Override
+    public void sendSMSFail(String msg) {
+        toastShow(getString(R.string.net_error));
+    }
+
+    private void dataSuccess(LoginResultBean bean) {
+        if (bean.getCode() != Utils.SUCCESS_CODE ) {
+            toastShow(bean.getMsg());
+            return;
+        }
+        activityStackManager.finishAllActivities();
+    }
 
     public class RegistOnClick{
         public void toLoginOnClick(View view){
+            activityStackManager.removeTopView();
             startActivity(new Intent(RegistActivity.this, LoginActivity.class));
         }
+        public void RegistOnClick(View view){
+            mvpPresenter.loadDataByRegist(binding.etMobile.getText().toString(), binding.etCode.getText().toString(), binding.etPwd.getText().toString(), binding.etInviteCode.getText().toString());
+        }
         public void getCodeOnClick(View view){
-            Utils.startCodeTime(RegistActivity.this, binding.getCode, handler, 60);
+            mvpPresenter.sendLoginSMS(binding.etMobile.getText().toString(), Utils.SMS_REG);
         }
         public void cancelOnClick(View view){
             binding.etMobile.setText(null);

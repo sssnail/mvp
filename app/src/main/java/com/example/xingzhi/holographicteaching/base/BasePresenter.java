@@ -3,6 +3,9 @@ package com.example.xingzhi.holographicteaching.base;
 import com.example.xingzhi.holographicteaching.net.ApiClient;
 import com.example.xingzhi.holographicteaching.net.ApiStores;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -49,4 +52,11 @@ public class BasePresenter<V> {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(observer);
     }
+    /**
+     * 参数集合 便于加公共参数
+     */
+    public Map<String, String> getHashMap(){
+        return new HashMap<String, String>();
+    }
+
 }

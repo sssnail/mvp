@@ -36,6 +36,8 @@
                     android:hint="请填写手机号码"
                     android:textSize="16sp"
                     android:background="@null"
+                    android:inputType="number"
+                    android:maxLength="11"
                     android:textColor="@color/color33" />
                 <ImageView
                     android:id="@+id/iv_cancel"
@@ -60,7 +62,7 @@
                     android:hint="请输入验证码"
                     android:textSize="16sp"
                     android:textColor="@color/color33"
-                    android:inputType="textPassword"
+                    android:inputType="number"
                     android:background="@null"/>
                 <Button
                     android:id="@+id/get_code"
@@ -88,6 +90,7 @@
                     android:textSize="16sp"
                     android:textColor="@color/color33"
                     android:inputType="textPassword"
+                    android:maxLength="16"
                     android:background="@null"/>
                 <ImageView
                     android:id="@+id/iv_pwd"
@@ -106,7 +109,7 @@
                 android:textSize="16sp"
                 android:layout_height="40dp"
                 android:layout_marginTop="30dp"
-                android:inputType="textPassword"
+                android:inputType="textVisiblePassword"
                 android:background="@drawable/radius_grey_bg"
                 android:textColor="@color/color33" />
 
@@ -157,6 +160,7 @@
                 android:background="@drawable/button_selector"
                 android:enabled="false"
                 android:layout_marginTop="@dimen/margin16"
+                android:onClick="@{clickEvent::RegistOnClick}"/>
                 />
 
             <TextView

@@ -12,6 +12,10 @@ import android.util.DisplayMetrics;
 
 import com.example.xingzhi.holographicteaching.common.AppContext;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by tiansj on 14/12/30.
  */
@@ -203,6 +207,23 @@ public class DeviceUtil {
             return true;
         else
             return false;
+    }
+
+    /**
+     * 获取精确到秒的时间戳
+     * @return
+     */
+    public static int getSecondTimestamp(Date date){
+        if (null == date) {
+            return 0;
+        }
+        String timestamp = String.valueOf(date.getTime());
+        int length = timestamp.length();
+        if (length > 3) {
+            return Integer.valueOf(timestamp.substring(0,length-3));
+        } else {
+            return 0;
+        }
     }
 
 }

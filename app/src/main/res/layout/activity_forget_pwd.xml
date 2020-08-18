@@ -62,7 +62,7 @@
                     android:hint="请输入验证码"
                     android:textSize="16sp"
                     android:textColor="@color/color33"
-                    android:inputType="textPassword"
+                    android:inputType="number"
                     android:background="@null"/>
                 <Button
                     android:id="@+id/get_code"
@@ -113,6 +113,7 @@
                 android:textSize="18sp"
                 android:gravity="center"
                 android:background="@drawable/button_selector"
+                android:onClick="@{clickEvent::buttonOnClick}"
                 android:enabled="false"
                 android:layout_marginTop="70dp"
                 />

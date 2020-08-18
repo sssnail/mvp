@@ -18,6 +18,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.xingzhi.holographicteaching.R;
+import com.example.xingzhi.holographicteaching.bean.BaseResultBean;
 import com.example.xingzhi.holographicteaching.databinding.FragmentHomeBinding;
 import com.example.xingzhi.holographicteaching.base.MvpFragment;
 import com.example.xingzhi.holographicteaching.bean.MainModel;
@@ -103,7 +104,7 @@ public class HomeFragment extends MvpFragment<MainPresenter> implements MainView
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "ss", Toast.LENGTH_SHORT).show();
-                mvpPresenter.loadDataByRetrofitRxjava("101310222");
+//                mvpPresenter.loadDataByRetrofitRxjava("101310222");
 
             }
         });

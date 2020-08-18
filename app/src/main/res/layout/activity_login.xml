@@ -90,6 +90,7 @@
                 android:gravity="center"
                 android:background="@drawable/button_selector"
                 android:enabled="false"
+                android:onClick="@{clickEvent::loginOnClick}"
                 android:layout_marginTop="70dp"
                 />
             <LinearLayout

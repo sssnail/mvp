@@ -31,6 +31,7 @@
                 android:layout_marginRight="@dimen/margin16"/>
 
             <TextView
+                android:id="@+id/tv_mobile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="175***4276"
@@ -117,6 +118,7 @@
 
         <View style="@style/DivideView" />
         <TextView
+            android:id="@+id/commit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="提交"
@@ -124,6 +126,7 @@
             android:textSize="18sp"
             android:gravity="center"
             android:background="@drawable/bg_radius_blue"
+            android:onClick="@{clickEvent::commitOnClick}"
             android:layout_marginTop="70dp"
             />
 

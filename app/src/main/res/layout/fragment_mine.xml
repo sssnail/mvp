@@ -6,6 +6,9 @@
         <variable
             name="clickEvent"
             type="com.example.xingzhi.holographicteaching.ui.fragment.MineFragment.MineClickEvent" />
+        <variable
+            name="bean"
+            type="com.example.xingzhi.holographicteaching.bean.CenterResultBean.CenterData" />
     </data>
 
     <ScrollView
@@ -35,14 +38,13 @@
                     android:layout_height="wrap_content"
                     android:src="@mipmap/portrait"
                     android:layout_gravity="center"
-                    android:layout_marginRight="@dimen/margin16"
-                    android:onClick="@{clickEvent::toLoginOnClick}"/>
+                    android:layout_marginRight="@dimen/margin16"/>
 
                 <TextView
                     android:id="@+id/tv_nickname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="用户昵称"
+                    android:text="@{bean.nickname}"
                     android:textSize="16sp"
                     android:layout_marginBottom="5dp"
                     android:layout_toRightOf="@id/iv_portrait"
@@ -50,7 +52,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="平台号：24355644"
+                    android:text="@{@string/mine_uid(bean.uid)}"
                     android:textSize="12sp"
                     android:textColor="@color/color66"
                     android:layout_below="@+id/tv_nickname"

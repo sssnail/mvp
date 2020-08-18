@@ -19,7 +19,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class StringUtils {
-
     private final static NumberFormat numberFormat = NumberFormat.getNumberInstance();
 
     static {

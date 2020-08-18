@@ -1,9 +1,14 @@
 package com.example.xingzhi.holographicteaching.net;
 
 
+import android.util.Log;
+
 import com.example.xingzhi.holographicteaching.BuildConfig;
+import com.example.xingzhi.holographicteaching.utils.DeviceUtil;
+import com.example.xingzhi.holographicteaching.utils.Utils;
 
 import java.io.IOException;
+import java.util.Date;
 
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -21,12 +26,19 @@ public class ApiClient {
         if (mRetrofit == null) {
             OkHttpClient.Builder builder = new OkHttpClient.Builder();
             //添加公共参数拦截器
-            builder.addInterceptor(HeaderInterceptor);
-//            BasicParamsInterceptor basicParamsInterceptor = new BasicParamsInterceptor
-//                    .Builder()
-//                    .addHeaderParams("session", 1)
-//                    .build();
-//            builder.addInterceptor(basicParamsInterceptor);
+
+//            builder.addInterceptor(HeaderInterceptor);
+            BasicParamsInterceptor basicParamsInterceptor = new BasicParamsInterceptor
+                    .Builder()
+//                    .addHeaderParams("device", "HONOR AUM-TL20|android|8.0.0")
+//                    .addHeaderParams("imei", "359597413688244-4655b31a529e70e2")
+//                    .addHeaderParams("version", "1.0.0")
+//                    .addHeaderParams("time", time)
+//                    .addHeaderParams("system", "android")
+//                    .addHeaderParams("token", "")
+//                    .addHeaderParams("sign", "F0DA2CE79DAA657D1DC5C8FFE4DB74DDANDROID")
+                    .build();
+            builder.addInterceptor(basicParamsInterceptor);
 
             if (BuildConfig.DEBUG) {
                 // Log信息拦截器
@@ -37,7 +49,7 @@ public class ApiClient {
             }
             OkHttpClient okHttpClient = builder.build();
             mRetrofit = new Retrofit.Builder()
-                    .baseUrl(ApiStores.API_SERVER_URL)
+                    .baseUrl(ApiStores.API_SERVER)
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .client(okHttpClient)

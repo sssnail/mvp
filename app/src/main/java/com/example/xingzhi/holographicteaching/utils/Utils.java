@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.xingzhi.holographicteaching.R;
 import com.example.xingzhi.holographicteaching.view.WarpLinearLayout;
+import com.tencent.mmkv.MMKV;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +27,29 @@ import java.util.List;
 public class Utils {
 
     private static final String TAG = "Utils";
+    public static String TOKEN = "";
+    public static int SUCCESS_CODE = 200;
+    public static String SMS_LOGIN = "login";
+    public static String SMS_REG = "reg";
+    public static String SMS_BIND = "SMS_BIND";
+    public static String SMS_UNBIND = "SMS_UNBIND";
+    public static String SMS_CHANGE = "SMS_CHANGE";
+    public static String SMS_VERIFY = "SMS_VERIFY";
+    public static String SMS_PWD = "pwd";
+    public static String SMS_IFFORGOT = "iforgot";
+    public static String time = "TIME";
+
+    public static String getToken() {
+        return TOKEN;
+    }
+
+    public static void setToken(String token) {
+        TOKEN = token;
+    }
+
+    public static MMKV getMMKV(){
+        return MMKV.defaultMMKV();
+    }
 
     public static void startCodeTime(final Context context, final Button button, final Handler handler, int time) {
         button.setTag(time);
