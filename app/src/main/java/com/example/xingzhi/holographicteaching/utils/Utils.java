@@ -31,9 +31,9 @@ public class Utils {
     public static int SUCCESS_CODE = 200;
     public static String SMS_LOGIN = "login";
     public static String SMS_REG = "reg";
-    public static String SMS_BIND = "SMS_BIND";
+    public static String SMS_BIND = "bind";
     public static String SMS_UNBIND = "SMS_UNBIND";
-    public static String SMS_CHANGE = "SMS_CHANGE";
+    public static String SMS_CHANGE = "change";
     public static String SMS_VERIFY = "SMS_VERIFY";
     public static String SMS_PWD = "pwd";
     public static String SMS_IFFORGOT = "iforgot";

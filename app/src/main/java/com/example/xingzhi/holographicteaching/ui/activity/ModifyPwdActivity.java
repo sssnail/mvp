@@ -83,7 +83,7 @@ public class ModifyPwdActivity extends MvpActivity<ModifiedPwdPresenter> impleme
             mvpPresenter.sendSMS(loginData.getMobile(), Utils.SMS_PWD);
         }
         public void commitOnClick(View view){
-            mvpPresenter.PwdModified(binding.getCode.getText().toString(), binding.etNewpwd.getText().toString());
+            mvpPresenter.PwdModified(Integer.parseInt(binding.etCode.getText().toString()), binding.etNewpwd.getText().toString());
         }
     }
 

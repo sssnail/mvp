@@ -51,6 +51,7 @@
                 app:layout_constraintLeft_toLeftOf="parent"/>
 
             <ImageView
+                android:id="@+id/iv_portrait"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:src="@drawable/ic_mine_account"
@@ -74,9 +75,9 @@
                 app:layout_constraintLeft_toLeftOf="parent"/>
 
             <TextView
+                android:id="@+id/tv_nickname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="不可思议"
                 android:textSize="14sp"
                 android:textColor="@color/color33"
                 android:layout_marginTop="12dp"
@@ -135,13 +136,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="绑定手机"
+                    android:text="换绑手机"
                     android:textColor="@color/color33"
                     android:textSize="14sp"/>
                 <TextView
+                    android:id="@+id/tv_mobile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="189*****468"
                     android:textColor="@color/color33"
                     android:textSize="14sp"
                     android:layout_alignParentRight="true"
@@ -156,7 +157,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="@dimen/margin8"
-                android:paddingBottom="@dimen/margin8">
+                android:paddingBottom="@dimen/margin8"
+                android:onClick="@{clickEvent::toAuthenticOnClick}">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

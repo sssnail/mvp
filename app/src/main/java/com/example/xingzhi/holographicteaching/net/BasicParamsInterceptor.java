@@ -53,7 +53,8 @@ public class BasicParamsInterceptor implements Interceptor {
                 }
 
                 HashMap<String, String> map = toMap(signParams);//
-                String signature = MD5.getSignature(map, "android");//
+                String secret = AppControl.isLogin()? AppControl.getUserToken(): "android";
+                String signature = MD5.getSignature(map, secret);//
                 // 添加公共参数
                 if (formBody.size() > 0){
                     formBody = bodyBuilder

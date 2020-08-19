@@ -14,12 +14,16 @@ import android.util.Log;
 import android.view.View;
 
 import com.example.xingzhi.holographicteaching.R;
+import com.example.xingzhi.holographicteaching.base.MvpActivity;
+import com.example.xingzhi.holographicteaching.bean.HotKeyResultBean;
 import com.example.xingzhi.holographicteaching.core.RecordsDao;
 import com.example.xingzhi.holographicteaching.databinding.ActivitySearchBinding;
+import com.example.xingzhi.holographicteaching.presenter.HotKeyPresenter;
 import com.example.xingzhi.holographicteaching.ui.fragment.GameFragment;
 import com.example.xingzhi.holographicteaching.ui.fragment.SearchHistoryFragment;
 import com.example.xingzhi.holographicteaching.ui.fragment.SearchResultFragment;
 import com.example.xingzhi.holographicteaching.utils.Utils;
+import com.example.xingzhi.holographicteaching.view.HotKeywordView;
 
 import java.util.ArrayList;
 import java.util.List;

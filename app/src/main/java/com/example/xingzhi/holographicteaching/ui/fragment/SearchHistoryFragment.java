@@ -80,20 +80,7 @@ public class SearchHistoryFragment extends Fragment {
         searchList.add("outside");
         searchList.add("wide");
 
-        bundle = getArguments();
-        if (bundle != null) {
-//            binding.textView.setText(bundle.getString(EXTRA_TEXT));
-        }
-
-
         Utils.ScrollViewLayout(getActivity(),searchList, binding.llHistory);
-//        binding.textView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(getActivity(), "dd", Toast.LENGTH_SHORT).show();
-//                gameCenterAdapter.showFootView();
-//            }
-//        });
     }
 
     private void initData() {

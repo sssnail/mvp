@@ -35,7 +35,7 @@ public class ModifiedPwdPresenter extends BasePresenter<ModifiedPwdView> {
                 });
     }
 
-    public void PwdModified(String code, String password) {
+    public void PwdModified(int code, String password) {
         mvpView.showLoading();
         addSubscription(apiStores.ResetPwdRequest(code, password),
                 new ApiCallback<BaseResultBean>() {

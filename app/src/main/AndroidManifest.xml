@@ -20,6 +20,7 @@
         android:theme="@style/AppTheme.NoActionBar"
         android:usesCleartextTraffic="true"
         tools:replace="android:appComponentFactory">
+        <activity android:name=".ui.activity.AuthenticActivity"></activity>
         <activity android:name=".ui.activity.ChooseDateActivity" />
         <activity android:name=".ui.activity.MyProfitActivity" />
         <activity android:name=".ui.activity.RankingActivity" />
