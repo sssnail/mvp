@@ -4,14 +4,14 @@ import java.util.List;
 
 public class HotKeyResultBean extends BaseResultBean {
 
-    private List<HotKeyData> datas;
+    private List<HotKeyData> data;
 
-    public List<HotKeyData> getDatas() {
-        return datas;
+    public List<HotKeyData> getData() {
+        return data;
     }
 
-    public void setDatas(List<HotKeyData> datas) {
-        this.datas = datas;
+    public void setData(List<HotKeyData> data) {
+        this.data = data;
     }
 
     public static class HotKeyData {

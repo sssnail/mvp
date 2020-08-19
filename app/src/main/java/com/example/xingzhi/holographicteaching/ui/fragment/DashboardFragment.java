@@ -15,16 +15,20 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.xingzhi.holographicteaching.R;
+import com.example.xingzhi.holographicteaching.base.MvpFragment;
+import com.example.xingzhi.holographicteaching.bean.VipIndexResultBean;
 import com.example.xingzhi.holographicteaching.databinding.FragmentDashboardBinding;
+import com.example.xingzhi.holographicteaching.presenter.VipIndexPresenter;
 import com.example.xingzhi.holographicteaching.ui.activity.AccountBillActivity;
 import com.example.xingzhi.holographicteaching.ui.activity.ActivateVipActivity;
 import com.example.xingzhi.holographicteaching.ui.activity.MyProfitActivity;
 import com.example.xingzhi.holographicteaching.ui.activity.PartnerActivity;
 import com.example.xingzhi.holographicteaching.ui.activity.WidrawExplainActivity;
+import com.example.xingzhi.holographicteaching.view.VipIndexView;
 import com.example.xingzhi.holographicteaching.viewmodel.DashboardViewModel;
 
 
-public class DashboardFragment extends Fragment implements View.OnClickListener {
+public class DashboardFragment  extends MvpFragment<VipIndexPresenter> implements VipIndexView,  View.OnClickListener {
 
     private FragmentDashboardBinding binding;
     private DashboardViewModel dashboardViewModel;
@@ -47,12 +51,39 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
     }
 
     @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        mvpPresenter.getVipIndex();
+
+    }
+
+    @Override
+    protected void lazyLoadData() {
+
+    }
+
+    @Override
+    protected VipIndexPresenter createPresenter() {
+        return new VipIndexPresenter(this);
+    }
+
+    @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.title_vip:
                 startActivity(new Intent(getActivity(), MyProfitActivity.class));
                 break;
         }
+    }
+
+    @Override
+    public void getVipIndexSuccess(VipIndexResultBean bean) {
+        binding.setBean(bean.getData());
+    }
+
+    @Override
+    public void getVipIndexFail(String msg) {
+
     }
 
     public class VipClickEvent{

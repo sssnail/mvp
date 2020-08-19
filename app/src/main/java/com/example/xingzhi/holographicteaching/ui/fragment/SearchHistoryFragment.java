@@ -14,15 +14,18 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
-import androidx.fragment.app.Fragment;
 
 import com.example.xingzhi.holographicteaching.R;
 import com.example.xingzhi.holographicteaching.adpter.TagAdapter;
+import com.example.xingzhi.holographicteaching.base.MvpFragment;
+import com.example.xingzhi.holographicteaching.bean.HotKeyResultBean;
 import com.example.xingzhi.holographicteaching.core.RecordsDao;
 import com.example.xingzhi.holographicteaching.databinding.FraSearchHistoryBinding;
+import com.example.xingzhi.holographicteaching.presenter.HotKeyPresenter;
 import com.example.xingzhi.holographicteaching.ui.activity.SearchActivity;
 import com.example.xingzhi.holographicteaching.utils.Utils;
 import com.example.xingzhi.holographicteaching.view.FlowLayout;
+import com.example.xingzhi.holographicteaching.view.HotKeywordView;
 import com.example.xingzhi.holographicteaching.view.TagFlowLayout;
 
 import java.util.ArrayList;
@@ -38,7 +41,7 @@ import io.reactivex.schedulers.Schedulers;
 /**
  * A fragment representing a list of Items.
  */
-public class SearchHistoryFragment extends Fragment {
+public class SearchHistoryFragment  extends MvpFragment<HotKeyPresenter> implements HotKeywordView {
 
 
     FraSearchHistoryBinding binding;
@@ -64,23 +67,50 @@ public class SearchHistoryFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //初始化数据库
-//        String username = "a"; //默认账号
         mRecordsDao = SearchActivity.mRecordsDao;
         initData();
         initView();
 
         searchList = new ArrayList();
-        searchList.add("人之初");
-        searchList.add("性本善");
-        searchList.add("性相近习相远");
-        searchList.add("耶");
-        searchList.add("千里之行始于足下");
-        searchList.add("Never underestimate your power");
-        searchList.add("to change yourself");
-        searchList.add("outside");
-        searchList.add("wide");
+//        searchList.add("人之初");
+//        searchList.add("性本善");
+//        searchList.add("性相近习相远");
+//        searchList.add("耶");
+//        searchList.add("千里之行始于足下");
+//        searchList.add("Never underestimate your power");
+//        searchList.add("to change yourself");
+//        searchList.add("outside");
+//        searchList.add("wide");
 
+    }
+
+    @Override
+    protected void lazyLoadData() {
+
+    }
+
+    @Override
+    protected HotKeyPresenter createPresenter() {
+        return new HotKeyPresenter(this);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mvpPresenter.getHotKey();
+    }
+
+    @Override
+    public void getHotKeySuccess(HotKeyResultBean bean) {
+        for (HotKeyResultBean.HotKeyData data : bean.getData()) {
+            searchList.add(data.getKeyword());
+        }
         Utils.ScrollViewLayout(getActivity(),searchList, binding.llHistory);
+    }
+
+    @Override
+    public void getHotKeyFail(String msg) {
+        toastShow(getString(R.string.net_error));
     }
 
     private void initData() {

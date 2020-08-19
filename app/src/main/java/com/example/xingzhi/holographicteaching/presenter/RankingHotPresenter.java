@@ -1,29 +1,29 @@
 package com.example.xingzhi.holographicteaching.presenter;
 
 import com.example.xingzhi.holographicteaching.base.BasePresenter;
-import com.example.xingzhi.holographicteaching.bean.AuthResultBean;
 import com.example.xingzhi.holographicteaching.bean.HotKeyResultBean;
+import com.example.xingzhi.holographicteaching.bean.RankingHotResultBean;
 import com.example.xingzhi.holographicteaching.net.ApiCallback;
-import com.example.xingzhi.holographicteaching.view.AuthView;
 import com.example.xingzhi.holographicteaching.view.HotKeywordView;
+import com.example.xingzhi.holographicteaching.view.RankingHotView;
 
-public class HotKeyPresenter extends BasePresenter<HotKeywordView> {
-    public HotKeyPresenter(HotKeywordView view) {
+public class RankingHotPresenter extends BasePresenter<RankingHotView> {
+    public RankingHotPresenter(RankingHotView view) {
         attachView(view);
     }
 
-    public void getHotKey() {
+    public void getRankingHotKey() {
         mvpView.showLoading();
-        addSubscription(apiStores.HotKeywordRequest(),
-                new ApiCallback<HotKeyResultBean>() {
+        addSubscription(apiStores.RankingHotRequest(),
+                new ApiCallback<RankingHotResultBean>() {
                     @Override
-                    public void onSuccess(HotKeyResultBean bean) {
-                        mvpView.getHotKeySuccess(bean);
+                    public void onSuccess(RankingHotResultBean bean) {
+                        mvpView.getRankingHotSuccess(bean);
                     }
 
                     @Override
                     public void onFailure(String msg) {
-                        mvpView.getHotKeyFail(msg);
+                        mvpView.getRankingHotFail(msg);
                     }
 
 

@@ -7,6 +7,9 @@
         <variable
             name="clickEvent"
             type="com.example.xingzhi.holographicteaching.ui.fragment.DashboardFragment.VipClickEvent" />
+        <variable
+            name="bean"
+            type="com.example.xingzhi.holographicteaching.bean.VipIndexResultBean.VipIndexData" />
     </data>
 
     <androidx.core.widget.NestedScrollView
@@ -44,7 +47,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/iv_portrait"
-                    android:text="用户昵称"
+                    android:text="@{bean.user.nickname}"
                     android:textColor="@color/colorWhite"
                     android:textSize="16sp" />
 
@@ -74,7 +77,7 @@
                     android:layout_toRightOf="@id/iv_portrait"
                     android:background="@drawable/bg_vip_rect"
                     android:gravity="center"
-                    android:text="累计提现:"
+                    android:text="@{String.valueOf(bean.user.amount)}"
                     android:textColor="@color/colorWhite"
                     android:textSize="10sp" />
 
@@ -154,7 +157,7 @@
                                 android:id="@+id/tv_partner"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="5445"
+                                android:text="@{String.valueOf(bean.friend)}"
                                 android:textSize="16sp"
                                 android:textColor="@color/color33" />
                             <TextView
@@ -163,7 +166,6 @@
                                 android:text="我的伙伴"
                                 android:textSize="12sp"
                                 android:textColor="@color/color33"
-                                android:layout_below="@id/tv_partner"
                                 android:layout_marginTop="10dp"/>
                         </LinearLayout>
                         <View style="@style/DivideViewSlice" android:layout_gravity="center"/>
@@ -177,7 +179,7 @@
                                 android:id="@+id/tv_vip"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="5445"
+                                android:text="@{String.valueOf(bean.vip_friend)}"
                                 android:textSize="16sp"
                                 android:textColor="@color/color33"/>
                             <TextView
@@ -186,7 +188,6 @@
                                 android:text="我的会员"
                                 android:textSize="12sp"
                                 android:textColor="@color/color33"
-                                android:layout_below="@id/tv_vip"
                                 android:layout_marginTop="10dp"/>
                         </LinearLayout>
                         <View style="@style/DivideViewSlice" android:layout_gravity="center"/>
@@ -197,10 +198,9 @@
                             android:gravity="center"
                             android:orientation="vertical">
                             <TextView
-                                android:id="@+id/tv_increase_pa"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="5445"
+                                android:text="@{String.valueOf(bean.today_friend)}"
                                 android:textSize="16sp"
                                 android:textColor="@color/color33"/>
                             <TextView
@@ -209,7 +209,6 @@
                                 android:text="今日新增伙伴"
                                 android:textSize="12sp"
                                 android:textColor="@color/color33"
-                                android:layout_below="@id/tv_increase_pa"
                                 android:layout_marginTop="10dp"/>
                         </LinearLayout>
                         <View style="@style/DivideViewSlice" android:layout_gravity="center"/>
@@ -223,7 +222,7 @@
                                 android:id="@+id/tv_increase_vip"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="5445"
+                                android:text="@{String.valueOf(bean.today_vip_friend)}"
                                 android:textSize="16sp"
                                 android:textColor="@color/color33"/>
                             <TextView
@@ -232,7 +231,6 @@
                                 android:text="今日新增会员"
                                 android:textSize="12sp"
                                 android:textColor="@color/color33"
-                                android:layout_below="@id/tv_increase_vip"
                                 android:layout_marginTop="10dp"/>
                         </LinearLayout>
                     </LinearLayout>
@@ -291,7 +289,7 @@
                                 android:id="@+id/tv_today_profit"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="¥ 1513.5"
+                                android:text="@{String.valueOf(bean.today_income)}"
                                 android:textSize="16sp"
                                 android:textColor="@color/color33" />
                             <TextView
@@ -300,7 +298,6 @@
                                 android:text="今日收益"
                                 android:textSize="12sp"
                                 android:textColor="@color/color33"
-                                android:layout_below="@id/tv_today_profit"
                                 android:layout_marginTop="10dp"/>
                         </LinearLayout>
                         <View style="@style/DivideViewSlice" android:layout_gravity="center"/>
@@ -314,7 +311,7 @@
                                 android:id="@+id/tv_month_profit"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="6582.0"
+                                android:text="@{String.valueOf(bean.money_income)}"
                                 android:textSize="16sp"
                                 android:textColor="@color/color33"/>
                             <TextView
@@ -323,7 +320,6 @@
                                 android:text="本月收益"
                                 android:textSize="12sp"
                                 android:textColor="@color/color33"
-                                android:layout_below="@id/tv_month_profit"
                                 android:layout_marginTop="10dp"/>
                         </LinearLayout>
                         <View style="@style/DivideViewSlice" android:layout_gravity="center"/>
@@ -334,10 +330,10 @@
                             android:gravity="center"
                             android:orientation="vertical">
                             <TextView
-                                android:id="@+id/tv_profit"
+                                android:id="@+id/tv_total_profit"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="5445"
+                                android:text="@{String.valueOf(bean.total_income)}"
                                 android:textSize="16sp"
                                 android:textColor="@color/color33"/>
                             <TextView
@@ -346,7 +342,6 @@
                                 android:text="总收益"
                                 android:textSize="12sp"
                                 android:textColor="@color/color33"
-                                android:layout_below="@id/tv_profit"
                                 android:layout_marginTop="10dp"/>
                         </LinearLayout>
                     </LinearLayout>

@@ -14,15 +14,19 @@ import androidx.fragment.app.Fragment;
 import com.example.xingzhi.holographicteaching.R;
 import com.example.xingzhi.holographicteaching.adpter.GameCenterAdapter;
 import com.example.xingzhi.holographicteaching.adpter.HomeGameAdapter;
+import com.example.xingzhi.holographicteaching.base.MvpFragment;
 import com.example.xingzhi.holographicteaching.bean.ItemListModel;
+import com.example.xingzhi.holographicteaching.bean.RankingHotResultBean;
 import com.example.xingzhi.holographicteaching.databinding.LayoutRvBinding;
 import com.example.xingzhi.holographicteaching.listener.ItemListener;
+import com.example.xingzhi.holographicteaching.presenter.RankingHotPresenter;
 import com.example.xingzhi.holographicteaching.utils.Utils;
+import com.example.xingzhi.holographicteaching.view.RankingHotView;
 
 /**
  * A fragment representing a list of Items.
  */
-public class RankingFragment extends Fragment {
+public class RankingFragment extends MvpFragment<RankingHotPresenter> implements RankingHotView {
 
     LayoutRvBinding binding;
     public static final String EXTRA_TEXT = "extra_foot";
@@ -36,8 +40,6 @@ public class RankingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater,  R.layout.layout_rv, container, false);
-//        itemListModel = ViewModelProviders.of(getActivity()).get(ItemListModel.class);
-
         return binding.getRoot();
     }
 
@@ -47,6 +49,8 @@ public class RankingFragment extends Fragment {
 
         adapter = new HomeGameAdapter(getContext());
         binding.list.setAdapter(adapter);
+        mvpPresenter.getRankingHotKey();
+
         for (int i = 0; i < 3; i++) {
             adapter.getItems().add(new ItemListModel.ItemListBean( "胜者为王", "4.5折", "全方位体验一个不一样的...", "传奇", "传奇9服", 0, Utils.getLabels()));
         }
@@ -69,5 +73,24 @@ public class RankingFragment extends Fragment {
                 adapter.showFootView();
             }
         });
+    }
+
+    @Override
+    protected void lazyLoadData() {
+
+    }
+
+    @Override
+    protected RankingHotPresenter createPresenter() {
+        return new RankingHotPresenter(this);
+    }
+
+    @Override
+    public void getRankingHotSuccess(RankingHotResultBean bean) {
+    }
+
+    @Override
+    public void getRankingHotFail(String msg) {
+        toastShow(getString(R.string.net_error));
     }
 }

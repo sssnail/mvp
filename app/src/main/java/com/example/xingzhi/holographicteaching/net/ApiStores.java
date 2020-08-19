@@ -7,6 +7,8 @@ import com.example.xingzhi.holographicteaching.bean.ChangeBindResultBean;
 import com.example.xingzhi.holographicteaching.bean.HotKeyResultBean;
 import com.example.xingzhi.holographicteaching.bean.LoginResultBean;
 import com.example.xingzhi.holographicteaching.bean.MainModel;
+import com.example.xingzhi.holographicteaching.bean.RankingHotResultBean;
+import com.example.xingzhi.holographicteaching.bean.VipIndexResultBean;
 
 import io.reactivex.Observable;
 import retrofit2.Call;
@@ -91,16 +93,16 @@ public interface ApiStores {
     @POST("api/user/auth")
     Observable<AuthResultBean> AuthRequest(@Field("real_name") String real_name, @Field("idcard") String idcard);
 
-    //用户实名认证 需要登录
-    @FormUrlEncoded
+    //会员首页
     @POST("api/vip/index")
-    Observable<AuthResultBean> VipIndexRequest(@Field("real_name") String real_name, @Field("idcard") String idcard);
+    Observable<VipIndexResultBean> VipIndexRequest();
 
-    //用户实名认证 需要登录
+    //热搜词
     @POST("api/search/hotKeyword")
     Observable<HotKeyResultBean> HotKeywordRequest();
 
-
-
+    //游戏热门排行榜
+    @POST("api/search/hotKeyword")
+    Observable<RankingHotResultBean> RankingHotRequest();
 
 }

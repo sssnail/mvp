@@ -244,8 +244,6 @@ public class Utils {
                         Toast.makeText(context, list.get(finalI).toString(), Toast.LENGTH_SHORT).show();
                     }
                 });
-
-
                 lay_gallery.addView(view);
             }
         }
